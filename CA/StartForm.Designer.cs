@@ -1,6 +1,6 @@
 ﻿namespace CA
 {
-    partial class Form1
+    partial class StartForm
     {
         /// <summary>
         /// Требуется переменная конструктора.
