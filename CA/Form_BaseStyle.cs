@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace CA
 {
-    public partial class StartForm : Form
+    public partial class Form_BaseStyle : Form
     {
-        public StartForm()
+        public Form_BaseStyle()
         {
             InitializeComponent();
         }

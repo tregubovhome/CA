@@ -16,7 +16,7 @@ namespace CA
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new StartForm());
+            Application.Run(new Form_Start());
         }
     }
 }
