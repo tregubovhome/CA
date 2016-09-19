@@ -12,10 +12,9 @@ F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.a
 F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.exe
 F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.pdb
 F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_Start.resources
-F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_Employees.resources
-F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_MoneyMoves.resources
-F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_Employee.resources
 F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_BaseStyle.resources
 F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\bin\Debug\System.Windows.Forms.Ribbon35.DLL
-F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_MoneyMove.resources
-F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_MoneyMoves_222.resources
+F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_MoneyFlow.resources
+F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_Companies.resources
+F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_Employees.resources
+F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_Materials.resources

@@ -1,6 +1,6 @@
 ﻿namespace CA
 {
-    partial class Form_Employees : Form_BaseStyle
+    partial class Form_Companies: Form_BaseStyle 
     {
         /// <summary>
         /// Required designer variable.
@@ -29,13 +29,17 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Employees));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Companies));
+            this.table_CompanyTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.cA_DB_DataSet = new CA.CA_DB_DataSet();
+            this.table_CompaniesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.table_CompanyTypesTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_CompanyTypesTableAdapter();
+            this.tableAdapterManager = new CA.CA_DB_DataSetTableAdapters.TableAdapterManager();
+            this.table_CompaniesTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_CompaniesTableAdapter();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
-            this.table_CompaniesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
+            this.table_CompanyTypesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
-            this.table_CompaniesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cA_DB_DataSet = new CA.CA_DB_DataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -46,14 +50,10 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
-            this.table_CompaniesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.table_CompaniesDataGridView = new System.Windows.Forms.DataGridView();
-            this.CompanyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.table_CompanyTypesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.table_CompanyTypesDataGridView = new System.Windows.Forms.DataGridView();
+            this.CompanyTypeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tableCompanyTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
@@ -66,25 +66,19 @@
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
-            this.table_EmployeesDataGridView = new System.Windows.Forms.DataGridView();
-            this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.table_CompaniesDataGridView = new System.Windows.Forms.DataGridView();
+            this.CompanyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.tableCompaniesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.table_EmployeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.tableCompanyTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button_Refresh = new System.Windows.Forms.Button();
             this.button_Save = new System.Windows.Forms.Button();
             this.button_SaveAndClose = new System.Windows.Forms.Button();
-            this.table_CompaniesTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_CompaniesTableAdapter();
-            this.tableAdapterManager = new CA.CA_DB_DataSetTableAdapters.TableAdapterManager();
-            this.table_CompanyTypesTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_CompanyTypesTableAdapter();
-            this.table_EmployeesTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_EmployeesTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.table_CompanyTypesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cA_DB_DataSet)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -93,18 +87,56 @@
             this.splitContainer2.Panel1.SuspendLayout();
             this.splitContainer2.Panel2.SuspendLayout();
             this.splitContainer2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesBindingNavigator)).BeginInit();
-            this.table_CompaniesBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cA_DB_DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableCompanyTypesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table_CompanyTypesBindingNavigator)).BeginInit();
+            this.table_CompanyTypesBindingNavigator.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.table_CompanyTypesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.table_EmployeesDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableCompaniesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.table_EmployeesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableCompanyTypesBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // table_CompanyTypesBindingSource
+            // 
+            this.table_CompanyTypesBindingSource.DataMember = "Table_CompanyTypes";
+            this.table_CompanyTypesBindingSource.DataSource = this.cA_DB_DataSet;
+            // 
+            // cA_DB_DataSet
+            // 
+            this.cA_DB_DataSet.DataSetName = "CA_DB_DataSet";
+            this.cA_DB_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // table_CompaniesBindingSource
+            // 
+            this.table_CompaniesBindingSource.DataMember = "FK_Table_Companies_Table_CompanyTypes";
+            this.table_CompaniesBindingSource.DataSource = this.table_CompanyTypesBindingSource;
+            // 
+            // table_CompanyTypesTableAdapter
+            // 
+            this.table_CompanyTypesTableAdapter.ClearBeforeFill = true;
+            // 
+            // tableAdapterManager
+            // 
+            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
+            this.tableAdapterManager.Table_CompaniesTableAdapter = this.table_CompaniesTableAdapter;
+            this.tableAdapterManager.Table_CompanyTypesTableAdapter = this.table_CompanyTypesTableAdapter;
+            this.tableAdapterManager.Table_EmployeesTableAdapter = null;
+            this.tableAdapterManager.Table_HistoryTableAdapter = null;
+            this.tableAdapterManager.Table_MaterialGroupsTableAdapter = null;
+            this.tableAdapterManager.Table_MaterialsTableAdapter = null;
+            this.tableAdapterManager.Table_MeasureUnitsTableAdapter = null;
+            this.tableAdapterManager.Table_MoneyFlowTableAdapter = null;
+            this.tableAdapterManager.Table_ProductionStagesTableAdapter = null;
+            this.tableAdapterManager.Table_ProjectsTableAdapter = null;
+            this.tableAdapterManager.Table_ProjectStatusesTableAdapter = null;
+            this.tableAdapterManager.Table_SectionsTableAdapter = null;
+            this.tableAdapterManager.Table_TEOMaterialsTableAdapter = null;
+            this.tableAdapterManager.Table_UsersTableAdapter = null;
+            this.tableAdapterManager.UpdateOrder = CA.CA_DB_DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
+            // 
+            // table_CompaniesTableAdapter
+            // 
+            this.table_CompaniesTableAdapter.ClearBeforeFill = true;
             // 
             // splitContainer1
             // 
@@ -122,8 +154,8 @@
             this.splitContainer1.Panel2.Controls.Add(this.button_Refresh);
             this.splitContainer1.Panel2.Controls.Add(this.button_Save);
             this.splitContainer1.Panel2.Controls.Add(this.button_SaveAndClose);
-            this.splitContainer1.Size = new System.Drawing.Size(1048, 514);
-            this.splitContainer1.SplitterDistance = 866;
+            this.splitContainer1.Size = new System.Drawing.Size(965, 468);
+            this.splitContainer1.SplitterDistance = 718;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -137,26 +169,26 @@
             // splitContainer2.Panel1
             // 
             this.splitContainer2.Panel1.AutoScroll = true;
-            this.splitContainer2.Panel1.Controls.Add(this.table_CompaniesBindingNavigator);
-            this.splitContainer2.Panel1.Controls.Add(this.table_CompaniesDataGridView);
+            this.splitContainer2.Panel1.Controls.Add(this.table_CompanyTypesBindingNavigator);
+            this.splitContainer2.Panel1.Controls.Add(this.table_CompanyTypesDataGridView);
             // 
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.AutoScroll = true;
             this.splitContainer2.Panel2.Controls.Add(this.bindingNavigator1);
-            this.splitContainer2.Panel2.Controls.Add(this.table_EmployeesDataGridView);
-            this.splitContainer2.Size = new System.Drawing.Size(866, 514);
-            this.splitContainer2.SplitterDistance = 208;
+            this.splitContainer2.Panel2.Controls.Add(this.table_CompaniesDataGridView);
+            this.splitContainer2.Size = new System.Drawing.Size(718, 468);
+            this.splitContainer2.SplitterDistance = 148;
             this.splitContainer2.TabIndex = 0;
             // 
-            // table_CompaniesBindingNavigator
+            // table_CompanyTypesBindingNavigator
             // 
-            this.table_CompaniesBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
-            this.table_CompaniesBindingNavigator.BindingSource = this.table_CompaniesBindingSource;
-            this.table_CompaniesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.table_CompaniesBindingNavigator.CountItemFormat = "из {0}";
-            this.table_CompaniesBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
-            this.table_CompaniesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.table_CompanyTypesBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.table_CompanyTypesBindingNavigator.BindingSource = this.table_CompanyTypesBindingSource;
+            this.table_CompanyTypesBindingNavigator.CountItem = this.bindingNavigatorCountItem;
+            this.table_CompanyTypesBindingNavigator.CountItemFormat = "из {0}";
+            this.table_CompanyTypesBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.table_CompanyTypesBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
             this.bindingNavigatorSeparator,
@@ -168,17 +200,17 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.table_CompaniesBindingNavigatorSaveItem});
-            this.table_CompaniesBindingNavigator.Location = new System.Drawing.Point(0, 0);
-            this.table_CompaniesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
-            this.table_CompaniesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
-            this.table_CompaniesBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
-            this.table_CompaniesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
-            this.table_CompaniesBindingNavigator.Name = "table_CompaniesBindingNavigator";
-            this.table_CompaniesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.table_CompaniesBindingNavigator.Size = new System.Drawing.Size(862, 25);
-            this.table_CompaniesBindingNavigator.TabIndex = 1;
-            this.table_CompaniesBindingNavigator.Text = "bindingNavigator1";
+            this.table_CompanyTypesBindingNavigatorSaveItem});
+            this.table_CompanyTypesBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.table_CompanyTypesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
+            this.table_CompanyTypesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
+            this.table_CompanyTypesBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
+            this.table_CompanyTypesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
+            this.table_CompanyTypesBindingNavigator.Name = "table_CompanyTypesBindingNavigator";
+            this.table_CompanyTypesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
+            this.table_CompanyTypesBindingNavigator.Size = new System.Drawing.Size(714, 25);
+            this.table_CompanyTypesBindingNavigator.TabIndex = 1;
+            this.table_CompanyTypesBindingNavigator.Text = "bindingNavigator1";
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -189,16 +221,6 @@
             this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
             this.bindingNavigatorAddNewItem.Visible = false;
-            // 
-            // table_CompaniesBindingSource
-            // 
-            this.table_CompaniesBindingSource.DataMember = "Table_Companies";
-            this.table_CompaniesBindingSource.DataSource = this.cA_DB_DataSet;
-            // 
-            // cA_DB_DataSet
-            // 
-            this.cA_DB_DataSet.DataSetName = "CA_DB_DataSet";
-            this.cA_DB_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -277,85 +299,53 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
-            // table_CompaniesBindingNavigatorSaveItem
+            // table_CompanyTypesBindingNavigatorSaveItem
             // 
-            this.table_CompaniesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.table_CompaniesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("table_CompaniesBindingNavigatorSaveItem.Image")));
-            this.table_CompaniesBindingNavigatorSaveItem.Name = "table_CompaniesBindingNavigatorSaveItem";
-            this.table_CompaniesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
-            this.table_CompaniesBindingNavigatorSaveItem.Text = "Сохранить данные";
-            this.table_CompaniesBindingNavigatorSaveItem.Visible = false;
+            this.table_CompanyTypesBindingNavigatorSaveItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.table_CompanyTypesBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("table_CompanyTypesBindingNavigatorSaveItem.Image")));
+            this.table_CompanyTypesBindingNavigatorSaveItem.Name = "table_CompanyTypesBindingNavigatorSaveItem";
+            this.table_CompanyTypesBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 22);
+            this.table_CompanyTypesBindingNavigatorSaveItem.Text = "Сохранить данные";
+            this.table_CompanyTypesBindingNavigatorSaveItem.Visible = false;
             // 
-            // table_CompaniesDataGridView
+            // table_CompanyTypesDataGridView
             // 
-            this.table_CompaniesDataGridView.AllowUserToAddRows = false;
-            this.table_CompaniesDataGridView.AllowUserToDeleteRows = false;
-            this.table_CompaniesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.table_CompanyTypesDataGridView.AllowUserToAddRows = false;
+            this.table_CompanyTypesDataGridView.AllowUserToDeleteRows = false;
+            this.table_CompanyTypesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.table_CompaniesDataGridView.AutoGenerateColumns = false;
-            this.table_CompaniesDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.table_CompaniesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.table_CompaniesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.CompanyID,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5});
-            this.table_CompaniesDataGridView.DataSource = this.table_CompaniesBindingSource;
-            this.table_CompaniesDataGridView.Location = new System.Drawing.Point(0, 28);
-            this.table_CompaniesDataGridView.Name = "table_CompaniesDataGridView";
-            this.table_CompaniesDataGridView.ReadOnly = true;
-            this.table_CompaniesDataGridView.Size = new System.Drawing.Size(862, 173);
-            this.table_CompaniesDataGridView.TabIndex = 0;
+            this.table_CompanyTypesDataGridView.AutoGenerateColumns = false;
+            this.table_CompanyTypesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.table_CompanyTypesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.table_CompanyTypesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CompanyTypeID,
+            this.dataGridViewTextBoxColumn2});
+            this.table_CompanyTypesDataGridView.DataSource = this.table_CompanyTypesBindingSource;
+            this.table_CompanyTypesDataGridView.Location = new System.Drawing.Point(0, 27);
+            this.table_CompanyTypesDataGridView.MultiSelect = false;
+            this.table_CompanyTypesDataGridView.Name = "table_CompanyTypesDataGridView";
+            this.table_CompanyTypesDataGridView.ReadOnly = true;
+            this.table_CompanyTypesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.table_CompanyTypesDataGridView.Size = new System.Drawing.Size(714, 122);
+            this.table_CompanyTypesDataGridView.TabIndex = 0;
             // 
-            // CompanyID
+            // CompanyTypeID
             // 
-            this.CompanyID.DataPropertyName = "id";
-            this.CompanyID.HeaderText = "id";
-            this.CompanyID.Name = "CompanyID";
-            this.CompanyID.ReadOnly = true;
-            this.CompanyID.Visible = false;
+            this.CompanyTypeID.DataPropertyName = "id";
+            this.CompanyTypeID.HeaderText = "id";
+            this.CompanyTypeID.Name = "CompanyTypeID";
+            this.CompanyTypeID.ReadOnly = true;
+            this.CompanyTypeID.Visible = false;
+            this.CompanyTypeID.Width = 40;
             // 
             // dataGridViewTextBoxColumn2
             // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "Num";
-            this.dataGridViewTextBoxColumn2.HeaderText = "№";
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Тип организации";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Организация";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "Date";
-            this.dataGridViewTextBoxColumn4.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            this.dataGridViewTextBoxColumn4.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "CompanyTypeID";
-            this.dataGridViewTextBoxColumn5.DataSource = this.tableCompanyTypesBindingSource;
-            this.dataGridViewTextBoxColumn5.DisplayMember = "Name";
-            this.dataGridViewTextBoxColumn5.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Тип организации";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn5.ValueMember = "id";
-            // 
-            // tableCompanyTypesBindingSource
-            // 
-            this.tableCompanyTypesBindingSource.DataMember = "Table_CompanyTypes";
-            this.tableCompanyTypesBindingSource.DataSource = this.cA_DB_DataSet;
+            this.dataGridViewTextBoxColumn2.Width = 109;
             // 
             // bindingNavigator1
             // 
@@ -382,7 +372,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(862, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(714, 25);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -472,110 +462,84 @@
             this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
             this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
-            // table_EmployeesDataGridView
+            // table_CompaniesDataGridView
             // 
-            this.table_EmployeesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.table_CompaniesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.table_EmployeesDataGridView.AutoGenerateColumns = false;
-            this.table_EmployeesDataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
-            this.table_EmployeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.table_EmployeesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.EmployeeID,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14});
-            this.table_EmployeesDataGridView.DataSource = this.table_EmployeesBindingSource;
-            this.table_EmployeesDataGridView.Location = new System.Drawing.Point(0, 28);
-            this.table_EmployeesDataGridView.Name = "table_EmployeesDataGridView";
-            this.table_EmployeesDataGridView.Size = new System.Drawing.Size(861, 269);
-            this.table_EmployeesDataGridView.TabIndex = 0;
-            this.table_EmployeesDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_EmployeesDataGridView_CellValueChanged);
-            this.table_EmployeesDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.table_EmployeesDataGridView_DefaultValuesNeeded);
+            this.table_CompaniesDataGridView.AutoGenerateColumns = false;
+            this.table_CompaniesDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.table_CompaniesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.table_CompaniesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.CompanyID,
+            this.Num,
+            this.dataGridViewTextBoxColumn5,
+            this.Date,
+            this.dataGridViewTextBoxColumn7});
+            this.table_CompaniesDataGridView.DataSource = this.table_CompaniesBindingSource;
+            this.table_CompaniesDataGridView.Location = new System.Drawing.Point(-2, 25);
+            this.table_CompaniesDataGridView.MultiSelect = false;
+            this.table_CompaniesDataGridView.Name = "table_CompaniesDataGridView";
+            this.table_CompaniesDataGridView.Size = new System.Drawing.Size(716, 286);
+            this.table_CompaniesDataGridView.TabIndex = 0;
+            this.table_CompaniesDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CompaniesDataGridView_CellValueChanged);
+            this.table_CompaniesDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.table_CompaniesDataGridView_DefaultValuesNeeded);
+            this.table_CompaniesDataGridView.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.table_CompaniesDataGridView_UserAddedRow);
             // 
-            // EmployeeID
+            // CompanyID
             // 
-            this.EmployeeID.DataPropertyName = "id";
-            this.EmployeeID.HeaderText = "id";
-            this.EmployeeID.Name = "EmployeeID";
-            this.EmployeeID.Visible = false;
+            this.CompanyID.DataPropertyName = "id";
+            this.CompanyID.HeaderText = "id";
+            this.CompanyID.Name = "CompanyID";
+            this.CompanyID.Visible = false;
+            this.CompanyID.Width = 40;
+            // 
+            // Num
+            // 
+            this.Num.DataPropertyName = "Num";
+            this.Num.HeaderText = "№";
+            this.Num.Name = "Num";
+            this.Num.Width = 43;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "Name";
+            this.dataGridViewTextBoxColumn5.HeaderText = "Название";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Width = 82;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "Date";
+            this.Date.HeaderText = "Дата вноса";
+            this.Date.Name = "Date";
+            this.Date.Width = 84;
             // 
             // dataGridViewTextBoxColumn7
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "CompanyID";
-            this.dataGridViewTextBoxColumn7.DataSource = this.tableCompaniesBindingSource;
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "CompanyTypeID";
+            this.dataGridViewTextBoxColumn7.DataSource = this.tableCompanyTypesBindingSource;
             this.dataGridViewTextBoxColumn7.DisplayMember = "Name";
             this.dataGridViewTextBoxColumn7.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Организация";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Тип организации";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
             this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn7.ValueMember = "id";
+            this.dataGridViewTextBoxColumn7.Width = 109;
             // 
-            // tableCompaniesBindingSource
+            // tableCompanyTypesBindingSource
             // 
-            this.tableCompaniesBindingSource.DataMember = "Table_Companies";
-            this.tableCompaniesBindingSource.DataSource = this.cA_DB_DataSet;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "LastName";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Фамилия";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "FirstName";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Имя";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "MiddleName";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Отчество";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Phones";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Телефоны";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Address";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Адрес";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Comment";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Комментарий";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // table_EmployeesBindingSource
-            // 
-            this.table_EmployeesBindingSource.DataMember = "FK_Table_Employees_Table_Companies";
-            this.table_EmployeesBindingSource.DataSource = this.table_CompaniesBindingSource;
+            this.tableCompanyTypesBindingSource.DataMember = "Table_CompanyTypes";
+            this.tableCompanyTypesBindingSource.DataSource = this.cA_DB_DataSet;
             // 
             // button_Refresh
             // 
             this.button_Refresh.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Refresh.Location = new System.Drawing.Point(0, 390);
+            this.button_Refresh.Location = new System.Drawing.Point(0, 344);
             this.button_Refresh.Name = "button_Refresh";
-            this.button_Refresh.Size = new System.Drawing.Size(174, 40);
-            this.button_Refresh.TabIndex = 10;
+            this.button_Refresh.Size = new System.Drawing.Size(239, 40);
+            this.button_Refresh.TabIndex = 7;
             this.button_Refresh.Text = "Обновить";
             this.button_Refresh.UseVisualStyleBackColor = true;
             this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
@@ -583,10 +547,10 @@
             // button_Save
             // 
             this.button_Save.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Save.Location = new System.Drawing.Point(0, 430);
+            this.button_Save.Location = new System.Drawing.Point(0, 384);
             this.button_Save.Name = "button_Save";
-            this.button_Save.Size = new System.Drawing.Size(174, 40);
-            this.button_Save.TabIndex = 9;
+            this.button_Save.Size = new System.Drawing.Size(239, 40);
+            this.button_Save.TabIndex = 6;
             this.button_Save.Text = "Сохранить";
             this.button_Save.UseVisualStyleBackColor = true;
             this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
@@ -594,54 +558,26 @@
             // button_SaveAndClose
             // 
             this.button_SaveAndClose.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_SaveAndClose.Location = new System.Drawing.Point(0, 470);
+            this.button_SaveAndClose.Location = new System.Drawing.Point(0, 424);
             this.button_SaveAndClose.Name = "button_SaveAndClose";
-            this.button_SaveAndClose.Size = new System.Drawing.Size(174, 40);
-            this.button_SaveAndClose.TabIndex = 8;
+            this.button_SaveAndClose.Size = new System.Drawing.Size(239, 40);
+            this.button_SaveAndClose.TabIndex = 5;
             this.button_SaveAndClose.Text = "Закрыть и Сохранить";
             this.button_SaveAndClose.UseVisualStyleBackColor = true;
             this.button_SaveAndClose.Click += new System.EventHandler(this.button_SaveAndClose_Click);
             // 
-            // table_CompaniesTableAdapter
-            // 
-            this.table_CompaniesTableAdapter.ClearBeforeFill = true;
-            // 
-            // tableAdapterManager
-            // 
-            this.tableAdapterManager.BackupDataSetBeforeUpdate = false;
-            this.tableAdapterManager.Table_CompaniesTableAdapter = this.table_CompaniesTableAdapter;
-            this.tableAdapterManager.Table_CompanyTypesTableAdapter = this.table_CompanyTypesTableAdapter;
-            this.tableAdapterManager.Table_EmployeesTableAdapter = this.table_EmployeesTableAdapter;
-            this.tableAdapterManager.Table_HistoryTableAdapter = null;
-            this.tableAdapterManager.Table_MaterialGroupsTableAdapter = null;
-            this.tableAdapterManager.Table_MaterialsTableAdapter = null;
-            this.tableAdapterManager.Table_MeasureUnitsTableAdapter = null;
-            this.tableAdapterManager.Table_MoneyFlowTableAdapter = null;
-            this.tableAdapterManager.Table_ProductionStagesTableAdapter = null;
-            this.tableAdapterManager.Table_ProjectsTableAdapter = null;
-            this.tableAdapterManager.Table_ProjectStatusesTableAdapter = null;
-            this.tableAdapterManager.Table_SectionsTableAdapter = null;
-            this.tableAdapterManager.Table_TEOMaterialsTableAdapter = null;
-            this.tableAdapterManager.Table_UsersTableAdapter = null;
-            this.tableAdapterManager.UpdateOrder = CA.CA_DB_DataSetTableAdapters.TableAdapterManager.UpdateOrderOption.InsertUpdateDelete;
-            // 
-            // table_CompanyTypesTableAdapter
-            // 
-            this.table_CompanyTypesTableAdapter.ClearBeforeFill = true;
-            // 
-            // table_EmployeesTableAdapter
-            // 
-            this.table_EmployeesTableAdapter.ClearBeforeFill = true;
-            // 
-            // Form_Employees
+            // Form_Companies
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1048, 514);
+            this.ClientSize = new System.Drawing.Size(965, 468);
             this.Controls.Add(this.splitContainer1);
-            this.Name = "Form_Employees";
-            this.Text = "Сотрудники";
-            this.Load += new System.EventHandler(this.Form_Employees_Load);
+            this.Name = "Form_Companies";
+            this.Text = "Организации";
+            this.Load += new System.EventHandler(this.Form_Companies_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.table_CompanyTypesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cA_DB_DataSet)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesBindingSource)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -652,19 +588,15 @@
             this.splitContainer2.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesBindingNavigator)).EndInit();
-            this.table_CompaniesBindingNavigator.ResumeLayout(false);
-            this.table_CompaniesBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cA_DB_DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableCompanyTypesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table_CompanyTypesBindingNavigator)).EndInit();
+            this.table_CompanyTypesBindingNavigator.ResumeLayout(false);
+            this.table_CompanyTypesBindingNavigator.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.table_CompanyTypesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.table_EmployeesDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableCompaniesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.table_EmployeesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableCompanyTypesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -674,10 +606,10 @@
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
         private CA_DB_DataSet cA_DB_DataSet;
-        private System.Windows.Forms.BindingSource table_CompaniesBindingSource;
-        private CA_DB_DataSetTableAdapters.Table_CompaniesTableAdapter table_CompaniesTableAdapter;
+        private System.Windows.Forms.BindingSource table_CompanyTypesBindingSource;
+        private CA_DB_DataSetTableAdapters.Table_CompanyTypesTableAdapter table_CompanyTypesTableAdapter;
         private CA_DB_DataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.BindingNavigator table_CompaniesBindingNavigator;
+        private System.Windows.Forms.BindingNavigator table_CompanyTypesBindingNavigator;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
@@ -689,10 +621,10 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.ToolStripButton table_CompaniesBindingNavigatorSaveItem;
-        private System.Windows.Forms.DataGridView table_CompaniesDataGridView;
-        private CA_DB_DataSetTableAdapters.Table_EmployeesTableAdapter table_EmployeesTableAdapter;
-        private System.Windows.Forms.BindingSource table_EmployeesBindingSource;
+        private System.Windows.Forms.ToolStripButton table_CompanyTypesBindingNavigatorSaveItem;
+        private System.Windows.Forms.DataGridView table_CompanyTypesDataGridView;
+        private CA_DB_DataSetTableAdapters.Table_CompaniesTableAdapter table_CompaniesTableAdapter;
+        private System.Windows.Forms.BindingSource table_CompaniesBindingSource;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem1;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem1;
@@ -705,26 +637,17 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem1;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator5;
-        private System.Windows.Forms.DataGridView table_EmployeesDataGridView;
-        private CA_DB_DataSetTableAdapters.Table_CompanyTypesTableAdapter table_CompanyTypesTableAdapter;
-        private System.Windows.Forms.BindingSource tableCompanyTypesBindingSource;
-        private System.Windows.Forms.BindingSource tableCompaniesBindingSource;
+        private System.Windows.Forms.DataGridView table_CompaniesDataGridView;
         private System.Windows.Forms.Button button_Refresh;
         private System.Windows.Forms.Button button_Save;
         private System.Windows.Forms.Button button_SaveAndClose;
-        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyID;
+        private System.Windows.Forms.BindingSource tableCompanyTypesBindingSource;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyTypeID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CompanyID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Num;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
     }
 }

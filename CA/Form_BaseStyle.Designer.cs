@@ -28,12 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.BS_toolTips = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
+            // 
+            // BS_toolTips
+            // 
+            this.BS_toolTips.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info;
             // 
             // Form_BaseStyle
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
-            this.ClientSize = new System.Drawing.Size(387, 249);
+            this.ClientSize = new System.Drawing.Size(599, 501);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.Margin = new System.Windows.Forms.Padding(5, 4, 5, 4);
             this.MaximizeBox = false;
@@ -46,6 +52,9 @@
         }
 
         #endregion
+
+        public System.Windows.Forms.ToolTip BS_toolTips;
+
 
 
     }

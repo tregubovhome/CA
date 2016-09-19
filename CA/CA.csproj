@@ -24,7 +24,7 @@
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>5</ApplicationRevision>
+    <ApplicationRevision>8</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -74,6 +74,7 @@
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Windows.Forms.Ribbon35">
       <HintPath>C:\Program Files (x86)\Microsoft Visual Studio 12.0\Common7\IDE\System.Windows.Forms.Ribbon35.DLL</HintPath>
     </Reference>
@@ -87,6 +88,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CA_DB_DataSet.cs">
+      <DependentUpon>CA_DB_DataSet.xsd</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="CA_DB_DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -98,11 +103,11 @@
     <Compile Include="Form_BaseStyle.Designer.cs">
       <DependentUpon>Form_BaseStyle.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_Employee.cs">
+    <Compile Include="Form_Companies.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_Employee.Designer.cs">
-      <DependentUpon>Form_Employee.cs</DependentUpon>
+    <Compile Include="Form_Companies.Designer.cs">
+      <DependentUpon>Form_Companies.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Employees.cs">
       <SubType>Form</SubType>
@@ -110,23 +115,17 @@
     <Compile Include="Form_Employees.Designer.cs">
       <DependentUpon>Form_Employees.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_MoneyMove.cs">
+    <Compile Include="Form_Materials.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_MoneyMove.Designer.cs">
-      <DependentUpon>Form_MoneyMove.cs</DependentUpon>
+    <Compile Include="Form_Materials.Designer.cs">
+      <DependentUpon>Form_Materials.cs</DependentUpon>
     </Compile>
-    <Compile Include="Form_MoneyMoves.cs">
+    <Compile Include="Form_MoneyFlow.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_MoneyMoves.Designer.cs">
-      <DependentUpon>Form_MoneyMoves.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Form_MoneyMoves_222.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form_MoneyMoves_222.Designer.cs">
-      <DependentUpon>Form_MoneyMoves_222.cs</DependentUpon>
+    <Compile Include="Form_MoneyFlow.Designer.cs">
+      <DependentUpon>Form_MoneyFlow.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Start.cs">
       <SubType>Form</SubType>
@@ -139,20 +138,17 @@
     <EmbeddedResource Include="Form_BaseStyle.resx">
       <DependentUpon>Form_BaseStyle.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_Employee.resx">
-      <DependentUpon>Form_Employee.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Companies.resx">
+      <DependentUpon>Form_Companies.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Employees.resx">
       <DependentUpon>Form_Employees.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_MoneyMove.resx">
-      <DependentUpon>Form_MoneyMove.cs</DependentUpon>
+    <EmbeddedResource Include="Form_Materials.resx">
+      <DependentUpon>Form_Materials.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form_MoneyMoves.resx">
-      <DependentUpon>Form_MoneyMoves.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Form_MoneyMoves_222.resx">
-      <DependentUpon>Form_MoneyMoves_222.cs</DependentUpon>
+    <EmbeddedResource Include="Form_MoneyFlow.resx">
+      <DependentUpon>Form_MoneyFlow.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

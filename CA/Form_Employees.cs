@@ -12,93 +12,74 @@ namespace CA
 {
     public partial class Form_Employees : Form_BaseStyle
     {
-        private Guid CurrentID = Guid.Empty;
-        public Form_Employees()
+        public override string BS_caption
         {
-            InitializeComponent();
+            set { BS_caption = value; }
+            get { return "Сотрудники"; }
         }
-        private void table_EmployeesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        public override void BS_Fill()
+        {
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "cA_DB_DataSet.Table_CompanyTypes". При необходимости она может быть перемещена или удалена.
+            this.table_CompanyTypesTableAdapter.Fill(this.cA_DB_DataSet.Table_CompanyTypes);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "cA_DB_DataSet.Table_Employees". При необходимости она может быть перемещена или удалена.
+            this.table_EmployeesTableAdapter.Fill(this.cA_DB_DataSet.Table_Employees);
+            // TODO: данная строка кода позволяет загрузить данные в таблицу "cA_DB_DataSet.Table_Companies". При необходимости она может быть перемещена или удалена.
+            this.table_CompaniesTableAdapter.Fill(this.cA_DB_DataSet.Table_Companies);
+        }
+        public override void BS_LoadData()
+        {
+            this.Text = BS_caption;
+            Guid _currMasterID = (Guid)table_CompaniesDataGridView["CompanyID", table_CompaniesDataGridView.CurrentRow.Index].Value;
+            Guid _currSlaveID = (Guid)table_EmployeesDataGridView["EmployeeID", table_EmployeesDataGridView.CurrentRow.Index].Value;
+            BS_Fill();
+            if (_currMasterID != Guid.Empty && _currSlaveID != Guid.Empty)
+            {
+                this.table_CompaniesBindingSource.Position = this.table_CompaniesBindingSource.Find("id", _currMasterID);
+                DataGridViewRow row = table_CompaniesDataGridView.Rows
+                    .Cast<DataGridViewRow>()
+                    .Where(r => r.IsNewRow.Equals(false))
+                    .Where(r => r.Cells["EmployeeID"].Value.ToString().Equals(_currSlaveID.ToString()))
+                    .First();
+                this.table_EmployeesBindingSource.Position = row.Index;
+            }
+        }
+        private void table_EmployeesDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
+        {
+            e.Row.Cells["EmployeeID"].Value = Guid.NewGuid();
+        }
+        private void table_EmployeesDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+            BS_DataChanged();
+        }
+        public Form_Employees()
+        { InitializeComponent(); }
+        /*private void table_CompaniesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.table_CompaniesBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.cA_DB_DataSet);
+        }*/
+        private void Form_Employees_Load(object sender, EventArgs e)
+        {
+            BS_Fill();
+        }
+        private void button_Refresh_Click(object sender, EventArgs e)
+        {
+            BS_Refresh();
+        }
+        private void button_Save_Click(object sender, EventArgs e)
         {
             Validate();
-            table_EmployeesBindingSource.EndEdit();
-            tableAdapterManager.UpdateAll(cA_DB_DataSet);
+            this.table_CompaniesBindingSource.EndEdit();
+            this.table_CompaniesTableAdapter.Adapter.Update(cA_DB_DataSet);
+            this.table_EmployeesBindingSource.EndEdit();
+            this.table_EmployeesTableAdapter.Adapter.Update(cA_DB_DataSet);
+            this.Text = BS_caption;
         }
-        private void Form_Employees_Load(object sender, EventArgs e)
-        {   // TODO: данная строка кода позволяет загрузить данные в таблицу "cA_DB_DataSet.Table_Employees". При необходимости она может быть перемещена или удалена.
-            table_EmployeesTableAdapter.Fill(cA_DB_DataSet.Table_Employees);
-        }
-        private void button_CreateNew_Click(object sender, EventArgs e)
+        private void button_SaveAndClose_Click(object sender, EventArgs e)
         {
-            CurrentID = Guid.NewGuid();
-            Form_Employee form_Employee = new Form_Employee(true, CurrentID);
-            form_Employee.ShowDialog();
-            table_EmployeesTableAdapter.Fill(cA_DB_DataSet.Table_Employees);
-            table_EmployeesBindingSource.Position = table_EmployeesBindingSource.Find("id", CurrentID);
+            button_Save_Click(sender, e);
+            Close();
         }
-        private void button_CloneCurrent_Click(object sender, EventArgs e)
-        {
-            CurrentID = Guid.NewGuid();
-            Form_Employee form_Employee = new Form_Employee(true, 
-                CurrentID,
-                (string)table_EmployeesDataGridView["dataGridViewTextBoxColumn2", table_EmployeesDataGridView.CurrentRow.Index].Value,
-                (string)table_EmployeesDataGridView["dataGridViewTextBoxColumn3", table_EmployeesDataGridView.CurrentRow.Index].Value,
-                (string)table_EmployeesDataGridView["dataGridViewTextBoxColumn4", table_EmployeesDataGridView.CurrentRow.Index].Value
-                );
-            form_Employee.ShowDialog();
-            table_EmployeesTableAdapter.Fill(cA_DB_DataSet.Table_Employees);
-            table_EmployeesBindingSource.Position = table_EmployeesBindingSource.Find("id", CurrentID);
-        }
-        private void table_EmployeesDataGridView_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            CurrentID = (Guid)table_EmployeesDataGridView["dataGridViewTextBoxColumn1", e.RowIndex].Value;
-            Form_Employee form_Employee = new Form_Employee(CurrentID);
-            form_Employee.ShowDialog();
-            table_EmployeesTableAdapter.Fill(cA_DB_DataSet.Table_Employees);
-            table_EmployeesBindingSource.Position = table_EmployeesBindingSource.Find("id", CurrentID);
-        }
-        private void button_EditCurrent_Click(object sender, EventArgs e)
-        {
-            CurrentID = (Guid)table_EmployeesDataGridView["dataGridViewTextBoxColumn1", table_EmployeesDataGridView.CurrentRow.Index].Value;
-            Form_Employee form_Employee = new Form_Employee(CurrentID);
-            form_Employee.ShowDialog();
-            table_EmployeesTableAdapter.Fill(cA_DB_DataSet.Table_Employees);
-            table_EmployeesBindingSource.Position = table_EmployeesBindingSource.Find("id", CurrentID);
-        }
-        private void button_DeleteCurrent_Click(object sender, EventArgs e)
-        {
-            CurrentID = (Guid)table_EmployeesDataGridView["dataGridViewTextBoxColumn1", table_EmployeesDataGridView.CurrentRow.Index].Value;
-            int NewPosition = table_EmployeesBindingSource.Find("id", CurrentID) - 1;
-            if (NewPosition < 0)
-                NewPosition = 0;
-            table_EmployeesTableAdapter.Delete(
-                CurrentID,
-                (string)table_EmployeesDataGridView["dataGridViewTextBoxColumn2", table_EmployeesDataGridView.CurrentRow.Index].Value,
-                (string)table_EmployeesDataGridView["dataGridViewTextBoxColumn3", table_EmployeesDataGridView.CurrentRow.Index].Value,
-                (string)table_EmployeesDataGridView["dataGridViewTextBoxColumn4", table_EmployeesDataGridView.CurrentRow.Index].Value
-                );
-            table_EmployeesTableAdapter.Fill(cA_DB_DataSet.Table_Employees);
-            table_EmployeesBindingSource.Position = NewPosition;
-        }
-        private void button1_Click(object sender, EventArgs e)
-        {
-            CurrentID = (Guid)table_EmployeesDataGridView["dataGridViewTextBoxColumn1", table_EmployeesDataGridView.CurrentRow.Index].Value;
-            table_EmployeesTableAdapter.Fill(cA_DB_DataSet.Table_Employees);
-            table_EmployeesBindingSource.Position = table_EmployeesBindingSource.Find("id", CurrentID);
-        }
-        /*private void table_EmployeesDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
-        {
-            //NewRecordRow = e.Row.Index;
-        }
-        private int NewRecordRow;
-        private void table_EmployeesDataGridView_RowValidating(object sender, DataGridViewCellCancelEventArgs e)
-        {
-            if (NewRecordRow == e.RowIndex && table_EmployeesDataGridView["dataGridViewTextBoxColumn1", e.RowIndex].Value.ToString() == "" &&
-                (table_EmployeesDataGridView["dataGridViewTextBoxColumn2", e.RowIndex].Value.ToString() != "" ||
-                 table_EmployeesDataGridView["dataGridViewTextBoxColumn3", e.RowIndex].Value.ToString() != "" ||
-                 table_EmployeesDataGridView["dataGridViewTextBoxColumn4", e.RowIndex].Value.ToString() != ""))
-            {
-                table_EmployeesDataGridView["dataGridViewTextBoxColumn1", e.RowIndex].Value = Guid.NewGuid();
-            }
-        }*/
     }
 }
