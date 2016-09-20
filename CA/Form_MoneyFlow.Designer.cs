@@ -30,7 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_MoneyFlow));
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.table_ProjectsDataGridView = new System.Windows.Forms.DataGridView();
+            this.ProjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.companyIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.marginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.projectStatusIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableProjectsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cA_DB_DataSet = new CA.CA_DB_DataSet();
             this.table_ProjectsTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_ProjectsTableAdapter();
@@ -38,9 +47,17 @@
             this.table_MoneyFlowTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_MoneyFlowTableAdapter();
             this.tableAdapterManager = new CA.CA_DB_DataSetTableAdapters.TableAdapterManager();
             this.table_MoneyFlowDataGridView = new System.Windows.Forms.DataGridView();
+            this.MoneyFlowID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsCash = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableProjectsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableEmployeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableMaterialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.table_EmployeesTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_EmployeesTableAdapter();
             this.table_MaterialsTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_MaterialsTableAdapter();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
@@ -68,29 +85,11 @@
             this.bindingNavigatorMoveNextItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.button_Refresh = new System.Windows.Forms.Button();
-            this.button_Save = new System.Windows.Forms.Button();
-            this.button_SaveAndClose = new System.Windows.Forms.Button();
             this.cA_DB_DataSet1 = new CA.CA_DB_DataSet();
-            this.MoneyFlowID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.IsCash = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.companyIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.commentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.numDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.marginDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sumDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.projectStatusIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table_ProjectsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableProjectsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cA_DB_DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_MoneyFlowBindingSource)).BeginInit();
@@ -113,17 +112,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.cA_DB_DataSet1)).BeginInit();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // table_ProjectsDataGridView
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.table_ProjectsDataGridView.AllowUserToAddRows = false;
+            this.table_ProjectsDataGridView.AllowUserToDeleteRows = false;
+            this.table_ProjectsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.table_ProjectsDataGridView.AutoGenerateColumns = false;
+            this.table_ProjectsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.table_ProjectsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.table_ProjectsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProjectID,
             this.companyIDDataGridViewTextBoxColumn,
             this.commentDataGridViewTextBoxColumn,
@@ -133,14 +132,93 @@
             this.marginDataGridViewTextBoxColumn,
             this.sumDataGridViewTextBoxColumn,
             this.projectStatusIDDataGridViewTextBoxColumn});
-            this.dataGridView1.DataSource = this.tableProjectsBindingSource;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 28);
-            this.dataGridView1.MultiSelect = false;
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(732, 114);
-            this.dataGridView1.TabIndex = 0;
+            this.table_ProjectsDataGridView.DataSource = this.tableProjectsBindingSource;
+            this.table_ProjectsDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.table_ProjectsDataGridView.MultiSelect = false;
+            this.table_ProjectsDataGridView.Name = "table_ProjectsDataGridView";
+            this.table_ProjectsDataGridView.ReadOnly = true;
+            this.table_ProjectsDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.table_ProjectsDataGridView.Size = new System.Drawing.Size(732, 114);
+            this.table_ProjectsDataGridView.TabIndex = 0;
+            // 
+            // ProjectID
+            // 
+            this.ProjectID.DataPropertyName = "id";
+            this.ProjectID.HeaderText = "id";
+            this.ProjectID.Name = "ProjectID";
+            this.ProjectID.ReadOnly = true;
+            this.ProjectID.Visible = false;
+            this.ProjectID.Width = 40;
+            // 
+            // companyIDDataGridViewTextBoxColumn
+            // 
+            this.companyIDDataGridViewTextBoxColumn.DataPropertyName = "CompanyID";
+            this.companyIDDataGridViewTextBoxColumn.HeaderText = "CompanyID";
+            this.companyIDDataGridViewTextBoxColumn.Name = "companyIDDataGridViewTextBoxColumn";
+            this.companyIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.companyIDDataGridViewTextBoxColumn.Visible = false;
+            this.companyIDDataGridViewTextBoxColumn.Width = 87;
+            // 
+            // commentDataGridViewTextBoxColumn
+            // 
+            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
+            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
+            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
+            this.commentDataGridViewTextBoxColumn.ReadOnly = true;
+            this.commentDataGridViewTextBoxColumn.Visible = false;
+            this.commentDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // numDataGridViewTextBoxColumn
+            // 
+            this.numDataGridViewTextBoxColumn.DataPropertyName = "Num";
+            this.numDataGridViewTextBoxColumn.HeaderText = "Номер";
+            this.numDataGridViewTextBoxColumn.Name = "numDataGridViewTextBoxColumn";
+            this.numDataGridViewTextBoxColumn.ReadOnly = true;
+            this.numDataGridViewTextBoxColumn.Width = 66;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.nameDataGridViewTextBoxColumn.Width = 82;
+            // 
+            // dateDataGridViewTextBoxColumn
+            // 
+            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
+            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
+            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
+            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dateDataGridViewTextBoxColumn.Visible = false;
+            this.dateDataGridViewTextBoxColumn.Width = 55;
+            // 
+            // marginDataGridViewTextBoxColumn
+            // 
+            this.marginDataGridViewTextBoxColumn.DataPropertyName = "Margin";
+            this.marginDataGridViewTextBoxColumn.HeaderText = "Margin";
+            this.marginDataGridViewTextBoxColumn.Name = "marginDataGridViewTextBoxColumn";
+            this.marginDataGridViewTextBoxColumn.ReadOnly = true;
+            this.marginDataGridViewTextBoxColumn.Visible = false;
+            this.marginDataGridViewTextBoxColumn.Width = 64;
+            // 
+            // sumDataGridViewTextBoxColumn
+            // 
+            this.sumDataGridViewTextBoxColumn.DataPropertyName = "Sum";
+            this.sumDataGridViewTextBoxColumn.HeaderText = "Sum";
+            this.sumDataGridViewTextBoxColumn.Name = "sumDataGridViewTextBoxColumn";
+            this.sumDataGridViewTextBoxColumn.ReadOnly = true;
+            this.sumDataGridViewTextBoxColumn.Visible = false;
+            this.sumDataGridViewTextBoxColumn.Width = 53;
+            // 
+            // projectStatusIDDataGridViewTextBoxColumn
+            // 
+            this.projectStatusIDDataGridViewTextBoxColumn.DataPropertyName = "ProjectStatusID";
+            this.projectStatusIDDataGridViewTextBoxColumn.HeaderText = "ProjectStatusID";
+            this.projectStatusIDDataGridViewTextBoxColumn.Name = "projectStatusIDDataGridViewTextBoxColumn";
+            this.projectStatusIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.projectStatusIDDataGridViewTextBoxColumn.Visible = false;
+            this.projectStatusIDDataGridViewTextBoxColumn.Width = 106;
             // 
             // tableProjectsBindingSource
             // 
@@ -210,20 +288,95 @@
             this.table_MoneyFlowDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_MoneyFlowDataGridView_CellValueChanged);
             this.table_MoneyFlowDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.table_MoneyFlowDataGridView_DefaultValuesNeeded);
             // 
+            // MoneyFlowID
+            // 
+            this.MoneyFlowID.DataPropertyName = "id";
+            this.MoneyFlowID.HeaderText = "id";
+            this.MoneyFlowID.Name = "MoneyFlowID";
+            this.MoneyFlowID.Visible = false;
+            this.MoneyFlowID.Width = 40;
+            // 
+            // Date
+            // 
+            this.Date.DataPropertyName = "Date";
+            this.Date.HeaderText = "Дата";
+            this.Date.Name = "Date";
+            this.Date.Width = 58;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Sum";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Сумма";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.Width = 66;
+            // 
+            // IsCash
+            // 
+            this.IsCash.DataPropertyName = "IsCash";
+            this.IsCash.HeaderText = "Наличные";
+            this.IsCash.Name = "IsCash";
+            this.IsCash.Width = 64;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "ProjectID";
+            this.dataGridViewTextBoxColumn4.DataSource = this.tableProjectsBindingSource1;
+            this.dataGridViewTextBoxColumn4.DisplayMember = "Name";
+            this.dataGridViewTextBoxColumn4.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn4.HeaderText = "Проект";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn4.ValueMember = "id";
+            this.dataGridViewTextBoxColumn4.Width = 69;
+            // 
             // tableProjectsBindingSource1
             // 
             this.tableProjectsBindingSource1.DataMember = "Table_Projects";
             this.tableProjectsBindingSource1.DataSource = this.cA_DB_DataSet;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "EmployeeID";
+            this.dataGridViewTextBoxColumn5.DataSource = this.tableEmployeesBindingSource;
+            this.dataGridViewTextBoxColumn5.DisplayMember = "LastName";
+            this.dataGridViewTextBoxColumn5.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn5.HeaderText = "Сотрудник";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn5.ValueMember = "id";
+            this.dataGridViewTextBoxColumn5.Width = 85;
             // 
             // tableEmployeesBindingSource
             // 
             this.tableEmployeesBindingSource.DataMember = "Table_Employees";
             this.tableEmployeesBindingSource.DataSource = this.cA_DB_DataSet;
             // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "MaterialID";
+            this.dataGridViewTextBoxColumn6.DataSource = this.tableMaterialsBindingSource;
+            this.dataGridViewTextBoxColumn6.DisplayMember = "Name";
+            this.dataGridViewTextBoxColumn6.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.dataGridViewTextBoxColumn6.HeaderText = "Материал";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dataGridViewTextBoxColumn6.ValueMember = "id";
+            this.dataGridViewTextBoxColumn6.Width = 82;
+            // 
             // tableMaterialsBindingSource
             // 
             this.tableMaterialsBindingSource.DataMember = "Table_Materials";
             this.tableMaterialsBindingSource.DataSource = this.cA_DB_DataSet;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Comment";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Комментарий";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.Width = 102;
             // 
             // table_EmployeesTableAdapter
             // 
@@ -244,7 +397,7 @@
             // splitContainer1.Panel1
             // 
             this.splitContainer1.Panel1.Controls.Add(this.bindingNavigator2);
-            this.splitContainer1.Panel1.Controls.Add(this.dataGridView1);
+            this.splitContainer1.Panel1.Controls.Add(this.table_ProjectsDataGridView);
             this.splitContainer1.Panel1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             // 
             // splitContainer1.Panel2
@@ -391,7 +544,8 @@
             this.bindingNavigatorMoveLastItem,
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
+            this.bindingNavigatorDeleteItem,
+            this.toolStripButtonDelete});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -428,6 +582,7 @@
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem.Text = "Удалить";
+            this.bindingNavigatorDeleteItem.Visible = false;
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -489,6 +644,16 @@
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
             this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButtonDelete
+            // 
+            this.toolStripButtonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
+            this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(55, 22);
+            this.toolStripButtonDelete.Text = "Удалить";
+            this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
+            // 
             // splitContainer2
             // 
             this.splitContainer2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
@@ -504,8 +669,6 @@
             // splitContainer2.Panel2
             // 
             this.splitContainer2.Panel2.Controls.Add(this.button_Refresh);
-            this.splitContainer2.Panel2.Controls.Add(this.button_Save);
-            this.splitContainer2.Panel2.Controls.Add(this.button_SaveAndClose);
             this.splitContainer2.Panel2.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.splitContainer2.Size = new System.Drawing.Size(927, 381);
             this.splitContainer2.SplitterDistance = 737;
@@ -514,7 +677,7 @@
             // button_Refresh
             // 
             this.button_Refresh.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Refresh.Location = new System.Drawing.Point(0, 257);
+            this.button_Refresh.Location = new System.Drawing.Point(0, 337);
             this.button_Refresh.Name = "button_Refresh";
             this.button_Refresh.Size = new System.Drawing.Size(182, 40);
             this.button_Refresh.TabIndex = 4;
@@ -522,186 +685,10 @@
             this.button_Refresh.UseVisualStyleBackColor = true;
             this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
             // 
-            // button_Save
-            // 
-            this.button_Save.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Save.Location = new System.Drawing.Point(0, 297);
-            this.button_Save.Name = "button_Save";
-            this.button_Save.Size = new System.Drawing.Size(182, 40);
-            this.button_Save.TabIndex = 3;
-            this.button_Save.Text = "Сохранить";
-            this.button_Save.UseVisualStyleBackColor = true;
-            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
-            // 
-            // button_SaveAndClose
-            // 
-            this.button_SaveAndClose.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_SaveAndClose.Location = new System.Drawing.Point(0, 337);
-            this.button_SaveAndClose.Name = "button_SaveAndClose";
-            this.button_SaveAndClose.Size = new System.Drawing.Size(182, 40);
-            this.button_SaveAndClose.TabIndex = 0;
-            this.button_SaveAndClose.Text = "Закрыть и Сохранить";
-            this.button_SaveAndClose.UseVisualStyleBackColor = true;
-            this.button_SaveAndClose.Click += new System.EventHandler(this.button_SaveAndClose_Click);
-            // 
             // cA_DB_DataSet1
             // 
             this.cA_DB_DataSet1.DataSetName = "CA_DB_DataSet";
             this.cA_DB_DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // MoneyFlowID
-            // 
-            this.MoneyFlowID.DataPropertyName = "id";
-            this.MoneyFlowID.HeaderText = "id";
-            this.MoneyFlowID.Name = "MoneyFlowID";
-            this.MoneyFlowID.Visible = false;
-            this.MoneyFlowID.Width = 40;
-            // 
-            // Date
-            // 
-            this.Date.DataPropertyName = "Date";
-            this.Date.HeaderText = "Дата";
-            this.Date.Name = "Date";
-            this.Date.Width = 58;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Sum";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Сумма";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.Width = 66;
-            // 
-            // IsCash
-            // 
-            this.IsCash.DataPropertyName = "IsCash";
-            this.IsCash.HeaderText = "Наличные";
-            this.IsCash.Name = "IsCash";
-            this.IsCash.Width = 64;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "ProjectID";
-            this.dataGridViewTextBoxColumn4.DataSource = this.tableProjectsBindingSource1;
-            this.dataGridViewTextBoxColumn4.DisplayMember = "Name";
-            this.dataGridViewTextBoxColumn4.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGridViewTextBoxColumn4.HeaderText = "Проект";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn4.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn4.ValueMember = "id";
-            this.dataGridViewTextBoxColumn4.Width = 69;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "EmployeeID";
-            this.dataGridViewTextBoxColumn5.DataSource = this.tableEmployeesBindingSource;
-            this.dataGridViewTextBoxColumn5.DisplayMember = "LastName";
-            this.dataGridViewTextBoxColumn5.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGridViewTextBoxColumn5.HeaderText = "Сотрудник";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn5.ValueMember = "id";
-            this.dataGridViewTextBoxColumn5.Width = 85;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "MaterialID";
-            this.dataGridViewTextBoxColumn6.DataSource = this.tableMaterialsBindingSource;
-            this.dataGridViewTextBoxColumn6.DisplayMember = "Name";
-            this.dataGridViewTextBoxColumn6.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGridViewTextBoxColumn6.HeaderText = "Материал";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn6.ValueMember = "id";
-            this.dataGridViewTextBoxColumn6.Width = 82;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Comment";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Комментарий";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Width = 102;
-            // 
-            // ProjectID
-            // 
-            this.ProjectID.DataPropertyName = "id";
-            this.ProjectID.HeaderText = "id";
-            this.ProjectID.Name = "ProjectID";
-            this.ProjectID.ReadOnly = true;
-            this.ProjectID.Visible = false;
-            this.ProjectID.Width = 40;
-            // 
-            // companyIDDataGridViewTextBoxColumn
-            // 
-            this.companyIDDataGridViewTextBoxColumn.DataPropertyName = "CompanyID";
-            this.companyIDDataGridViewTextBoxColumn.HeaderText = "CompanyID";
-            this.companyIDDataGridViewTextBoxColumn.Name = "companyIDDataGridViewTextBoxColumn";
-            this.companyIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.companyIDDataGridViewTextBoxColumn.Visible = false;
-            this.companyIDDataGridViewTextBoxColumn.Width = 87;
-            // 
-            // commentDataGridViewTextBoxColumn
-            // 
-            this.commentDataGridViewTextBoxColumn.DataPropertyName = "Comment";
-            this.commentDataGridViewTextBoxColumn.HeaderText = "Comment";
-            this.commentDataGridViewTextBoxColumn.Name = "commentDataGridViewTextBoxColumn";
-            this.commentDataGridViewTextBoxColumn.ReadOnly = true;
-            this.commentDataGridViewTextBoxColumn.Visible = false;
-            this.commentDataGridViewTextBoxColumn.Width = 76;
-            // 
-            // numDataGridViewTextBoxColumn
-            // 
-            this.numDataGridViewTextBoxColumn.DataPropertyName = "Num";
-            this.numDataGridViewTextBoxColumn.HeaderText = "Номер";
-            this.numDataGridViewTextBoxColumn.Name = "numDataGridViewTextBoxColumn";
-            this.numDataGridViewTextBoxColumn.ReadOnly = true;
-            this.numDataGridViewTextBoxColumn.Width = 66;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Название";
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 82;
-            // 
-            // dateDataGridViewTextBoxColumn
-            // 
-            this.dateDataGridViewTextBoxColumn.DataPropertyName = "Date";
-            this.dateDataGridViewTextBoxColumn.HeaderText = "Date";
-            this.dateDataGridViewTextBoxColumn.Name = "dateDataGridViewTextBoxColumn";
-            this.dateDataGridViewTextBoxColumn.ReadOnly = true;
-            this.dateDataGridViewTextBoxColumn.Visible = false;
-            this.dateDataGridViewTextBoxColumn.Width = 55;
-            // 
-            // marginDataGridViewTextBoxColumn
-            // 
-            this.marginDataGridViewTextBoxColumn.DataPropertyName = "Margin";
-            this.marginDataGridViewTextBoxColumn.HeaderText = "Margin";
-            this.marginDataGridViewTextBoxColumn.Name = "marginDataGridViewTextBoxColumn";
-            this.marginDataGridViewTextBoxColumn.ReadOnly = true;
-            this.marginDataGridViewTextBoxColumn.Visible = false;
-            this.marginDataGridViewTextBoxColumn.Width = 64;
-            // 
-            // sumDataGridViewTextBoxColumn
-            // 
-            this.sumDataGridViewTextBoxColumn.DataPropertyName = "Sum";
-            this.sumDataGridViewTextBoxColumn.HeaderText = "Sum";
-            this.sumDataGridViewTextBoxColumn.Name = "sumDataGridViewTextBoxColumn";
-            this.sumDataGridViewTextBoxColumn.ReadOnly = true;
-            this.sumDataGridViewTextBoxColumn.Visible = false;
-            this.sumDataGridViewTextBoxColumn.Width = 53;
-            // 
-            // projectStatusIDDataGridViewTextBoxColumn
-            // 
-            this.projectStatusIDDataGridViewTextBoxColumn.DataPropertyName = "ProjectStatusID";
-            this.projectStatusIDDataGridViewTextBoxColumn.HeaderText = "ProjectStatusID";
-            this.projectStatusIDDataGridViewTextBoxColumn.Name = "projectStatusIDDataGridViewTextBoxColumn";
-            this.projectStatusIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.projectStatusIDDataGridViewTextBoxColumn.Visible = false;
-            this.projectStatusIDDataGridViewTextBoxColumn.Width = 106;
             // 
             // Form_MoneyFlow
             // 
@@ -712,7 +699,8 @@
             this.Name = "Form_MoneyFlow";
             this.Text = "Расходы и поступления";
             this.Load += new System.EventHandler(this.Form_MoneyFlow_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Shown += new System.EventHandler(this.Form_MoneyFlow_Shown);
+            ((System.ComponentModel.ISupportInitialize)(this.table_ProjectsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableProjectsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cA_DB_DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_MoneyFlowBindingSource)).EndInit();
@@ -743,7 +731,7 @@
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView table_ProjectsDataGridView;
         private CA_DB_DataSet cA_DB_DataSet;
         private System.Windows.Forms.BindingSource tableProjectsBindingSource;
         private CA_DB_DataSetTableAdapters.Table_ProjectsTableAdapter table_ProjectsTableAdapter;
@@ -757,7 +745,6 @@
         private CA_DB_DataSetTableAdapters.Table_MaterialsTableAdapter table_MaterialsTableAdapter;
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.SplitContainer splitContainer2;
-        private System.Windows.Forms.Button button_SaveAndClose;
         private System.Windows.Forms.BindingSource tableProjectsBindingSource1;
         private CA_DB_DataSet cA_DB_DataSet1;
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
@@ -784,7 +771,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem1;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator5;
-        private System.Windows.Forms.Button button_Save;
         private System.Windows.Forms.Button button_Refresh;
         private System.Windows.Forms.DataGridViewTextBoxColumn MoneyFlowID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
@@ -803,5 +789,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn marginDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn projectStatusIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
     }
 }

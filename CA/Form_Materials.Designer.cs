@@ -48,6 +48,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.table_MaterialGroupsBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButtonDeleteGroup = new System.Windows.Forms.ToolStripButton();
             this.table_MaterialGroupsDataGridView = new System.Windows.Forms.DataGridView();
             this.GroupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,28 +64,29 @@
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.table_MaterialsDataGridView = new System.Windows.Forms.DataGridView();
             this.MaterialID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaterialSectionID = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableSectionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.MaterialGroupID = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableMaterialGroupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.IsWork = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.MaterialName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Matter = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Article = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaterialMeasureUnitID = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableMeasureUnitsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.table_MaterialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button_Refresh = new System.Windows.Forms.Button();
-            this.button_Save = new System.Windows.Forms.Button();
-            this.button_SaveAndClose = new System.Windows.Forms.Button();
             this.table_MaterialGroupsTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_MaterialGroupsTableAdapter();
             this.tableAdapterManager = new CA.CA_DB_DataSetTableAdapters.TableAdapterManager();
             this.table_MaterialsTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_MaterialsTableAdapter();
             this.table_MeasureUnitsTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_MeasureUnitsTableAdapter();
             this.table_SectionsTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_SectionsTableAdapter();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.tableSectionsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -95,6 +97,7 @@
             this.splitContainer2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).BeginInit();
             this.splitContainer3.Panel1.SuspendLayout();
+            this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_MaterialGroupsBindingNavigator)).BeginInit();
             this.table_MaterialGroupsBindingNavigator.SuspendLayout();
@@ -108,6 +111,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableMaterialGroupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableMeasureUnitsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_MaterialsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableSectionsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -124,8 +128,6 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.button_Refresh);
-            this.splitContainer1.Panel2.Controls.Add(this.button_Save);
-            this.splitContainer1.Panel2.Controls.Add(this.button_SaveAndClose);
             this.splitContainer1.Size = new System.Drawing.Size(988, 690);
             this.splitContainer1.SplitterDistance = 743;
             this.splitContainer1.TabIndex = 0;
@@ -163,6 +165,10 @@
             this.splitContainer3.Panel1.AutoScroll = true;
             this.splitContainer3.Panel1.Controls.Add(this.table_MaterialGroupsBindingNavigator);
             this.splitContainer3.Panel1.Controls.Add(this.table_MaterialGroupsDataGridView);
+            // 
+            // splitContainer3.Panel2
+            // 
+            this.splitContainer3.Panel2.Controls.Add(this.comboBox1);
             this.splitContainer3.Size = new System.Drawing.Size(743, 223);
             this.splitContainer3.SplitterDistance = 359;
             this.splitContainer3.TabIndex = 0;
@@ -186,7 +192,8 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.table_MaterialGroupsBindingNavigatorSaveItem});
+            this.table_MaterialGroupsBindingNavigatorSaveItem,
+            this.toolStripButtonDeleteGroup});
             this.table_MaterialGroupsBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.table_MaterialGroupsBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.table_MaterialGroupsBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -304,6 +311,16 @@
             this.table_MaterialGroupsBindingNavigatorSaveItem.Text = "Сохранить данные";
             this.table_MaterialGroupsBindingNavigatorSaveItem.Visible = false;
             // 
+            // toolStripButtonDeleteGroup
+            // 
+            this.toolStripButtonDeleteGroup.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonDeleteGroup.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDeleteGroup.Image")));
+            this.toolStripButtonDeleteGroup.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDeleteGroup.Name = "toolStripButtonDeleteGroup";
+            this.toolStripButtonDeleteGroup.Size = new System.Drawing.Size(55, 22);
+            this.toolStripButtonDeleteGroup.Text = "Удалить";
+            this.toolStripButtonDeleteGroup.Click += new System.EventHandler(this.toolStripButtonDeleteGroup_Click);
+            // 
             // table_MaterialGroupsDataGridView
             // 
             this.table_MaterialGroupsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -352,7 +369,8 @@
             this.bindingNavigatorMoveLastItem1,
             this.bindingNavigatorSeparator5,
             this.bindingNavigatorAddNewItem1,
-            this.bindingNavigatorDeleteItem1});
+            this.bindingNavigatorDeleteItem1,
+            this.toolStripButtonDelete});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem1;
@@ -451,6 +469,16 @@
             this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
             this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButtonDelete
+            // 
+            this.toolStripButtonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
+            this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(55, 22);
+            this.toolStripButtonDelete.Text = "Удалить";
+            this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
+            // 
             // table_MaterialsDataGridView
             // 
             this.table_MaterialsDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -462,12 +490,12 @@
             this.MaterialID,
             this.MaterialSectionID,
             this.MaterialGroupID,
-            this.dataGridViewCheckBoxColumn1,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
+            this.IsWork,
+            this.MaterialName,
+            this.Matter,
+            this.Article,
             this.MaterialMeasureUnitID,
-            this.dataGridViewTextBoxColumn10});
+            this.Price});
             this.table_MaterialsDataGridView.DataSource = this.table_MaterialsBindingSource;
             this.table_MaterialsDataGridView.Location = new System.Drawing.Point(-2, 28);
             this.table_MaterialsDataGridView.Name = "table_MaterialsDataGridView";
@@ -517,29 +545,29 @@
             this.tableMaterialGroupsBindingSource.DataMember = "Table_MaterialGroups";
             this.tableMaterialGroupsBindingSource.DataSource = this.cA_DB_DataSet;
             // 
-            // dataGridViewCheckBoxColumn1
+            // IsWork
             // 
-            this.dataGridViewCheckBoxColumn1.DataPropertyName = "IsWork";
-            this.dataGridViewCheckBoxColumn1.HeaderText = "Работы";
-            this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
+            this.IsWork.DataPropertyName = "IsWork";
+            this.IsWork.HeaderText = "Работы";
+            this.IsWork.Name = "IsWork";
             // 
-            // dataGridViewTextBoxColumn6
+            // MaterialName
             // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "Name";
-            this.dataGridViewTextBoxColumn6.HeaderText = "Наименование";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.MaterialName.DataPropertyName = "Name";
+            this.MaterialName.HeaderText = "Наименование";
+            this.MaterialName.Name = "MaterialName";
             // 
-            // dataGridViewTextBoxColumn7
+            // Matter
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Matter";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Состав (материал)";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.Matter.DataPropertyName = "Matter";
+            this.Matter.HeaderText = "Состав (материал)";
+            this.Matter.Name = "Matter";
             // 
-            // dataGridViewTextBoxColumn8
+            // Article
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "Article";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Артикул";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.Article.DataPropertyName = "Article";
+            this.Article.HeaderText = "Артикул";
+            this.Article.Name = "Article";
             // 
             // MaterialMeasureUnitID
             // 
@@ -558,11 +586,11 @@
             this.tableMeasureUnitsBindingSource.DataMember = "Table_MeasureUnits";
             this.tableMeasureUnitsBindingSource.DataSource = this.cA_DB_DataSet;
             // 
-            // dataGridViewTextBoxColumn10
+            // Price
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Price";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Актуальная цена";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.Price.DataPropertyName = "Price";
+            this.Price.HeaderText = "Актуальная цена";
+            this.Price.Name = "Price";
             // 
             // table_MaterialsBindingSource
             // 
@@ -572,35 +600,13 @@
             // button_Refresh
             // 
             this.button_Refresh.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Refresh.Location = new System.Drawing.Point(0, 566);
+            this.button_Refresh.Location = new System.Drawing.Point(0, 646);
             this.button_Refresh.Name = "button_Refresh";
             this.button_Refresh.Size = new System.Drawing.Size(237, 40);
             this.button_Refresh.TabIndex = 10;
             this.button_Refresh.Text = "Обновить";
             this.button_Refresh.UseVisualStyleBackColor = true;
             this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
-            // 
-            // button_Save
-            // 
-            this.button_Save.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Save.Location = new System.Drawing.Point(0, 606);
-            this.button_Save.Name = "button_Save";
-            this.button_Save.Size = new System.Drawing.Size(237, 40);
-            this.button_Save.TabIndex = 9;
-            this.button_Save.Text = "Сохранить";
-            this.button_Save.UseVisualStyleBackColor = true;
-            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
-            // 
-            // button_SaveAndClose
-            // 
-            this.button_SaveAndClose.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_SaveAndClose.Location = new System.Drawing.Point(0, 646);
-            this.button_SaveAndClose.Name = "button_SaveAndClose";
-            this.button_SaveAndClose.Size = new System.Drawing.Size(237, 40);
-            this.button_SaveAndClose.TabIndex = 8;
-            this.button_SaveAndClose.Text = "Закрыть и Сохранить";
-            this.button_SaveAndClose.UseVisualStyleBackColor = true;
-            this.button_SaveAndClose.Click += new System.EventHandler(this.button_SaveAndClose_Click);
             // 
             // table_MaterialGroupsTableAdapter
             // 
@@ -637,6 +643,22 @@
             // 
             this.table_SectionsTableAdapter.ClearBeforeFill = true;
             // 
+            // comboBox1
+            // 
+            this.comboBox1.DataSource = this.tableSectionsBindingSource1;
+            this.comboBox1.DisplayMember = "Name";
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(49, 69);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(192, 21);
+            this.comboBox1.TabIndex = 0;
+            this.comboBox1.ValueMember = "id";
+            // 
+            // tableSectionsBindingSource1
+            // 
+            this.tableSectionsBindingSource1.DataMember = "Table_Sections";
+            this.tableSectionsBindingSource1.DataSource = this.cA_DB_DataSet;
+            // 
             // Form_Materials
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -657,6 +679,7 @@
             this.splitContainer2.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
             this.splitContainer3.Panel1.PerformLayout();
+            this.splitContainer3.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.table_MaterialGroupsBindingNavigator)).EndInit();
@@ -673,6 +696,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableMaterialGroupsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableMeasureUnitsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_MaterialsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tableSectionsBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -723,16 +747,18 @@
         private System.Windows.Forms.BindingSource tableMaterialGroupsBindingSource;
         private System.Windows.Forms.BindingSource tableMeasureUnitsBindingSource;
         private System.Windows.Forms.Button button_Refresh;
-        private System.Windows.Forms.Button button_Save;
-        private System.Windows.Forms.Button button_SaveAndClose;
+        private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
+        private System.Windows.Forms.ToolStripButton toolStripButtonDeleteGroup;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaterialID;
         private System.Windows.Forms.DataGridViewComboBoxColumn MaterialSectionID;
         private System.Windows.Forms.DataGridViewComboBoxColumn MaterialGroupID;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsWork;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MaterialName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Matter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Article;
         private System.Windows.Forms.DataGridViewComboBoxColumn MaterialMeasureUnitID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.BindingSource tableSectionsBindingSource1;
     }
 }

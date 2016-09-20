@@ -74,8 +74,7 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableCompanyTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button_Refresh = new System.Windows.Forms.Button();
-            this.button_Save = new System.Windows.Forms.Button();
-            this.button_SaveAndClose = new System.Windows.Forms.Button();
+            this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.table_CompanyTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cA_DB_DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesBindingSource)).BeginInit();
@@ -152,8 +151,6 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.button_Refresh);
-            this.splitContainer1.Panel2.Controls.Add(this.button_Save);
-            this.splitContainer1.Panel2.Controls.Add(this.button_SaveAndClose);
             this.splitContainer1.Size = new System.Drawing.Size(965, 468);
             this.splitContainer1.SplitterDistance = 718;
             this.splitContainer1.TabIndex = 0;
@@ -364,7 +361,8 @@
             this.bindingNavigatorMoveLastItem1,
             this.bindingNavigatorSeparator5,
             this.bindingNavigatorAddNewItem1,
-            this.bindingNavigatorDeleteItem1});
+            this.bindingNavigatorDeleteItem1,
+            this.toolStripButtonDelete});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem1;
@@ -401,6 +399,7 @@
             this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem1.Text = "Удалить";
+            this.bindingNavigatorDeleteItem1.Visible = false;
             // 
             // bindingNavigatorMoveFirstItem1
             // 
@@ -484,7 +483,6 @@
             this.table_CompaniesDataGridView.TabIndex = 0;
             this.table_CompaniesDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CompaniesDataGridView_CellValueChanged);
             this.table_CompaniesDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.table_CompaniesDataGridView_DefaultValuesNeeded);
-            this.table_CompaniesDataGridView.UserAddedRow += new System.Windows.Forms.DataGridViewRowEventHandler(this.table_CompaniesDataGridView_UserAddedRow);
             // 
             // CompanyID
             // 
@@ -536,7 +534,7 @@
             // button_Refresh
             // 
             this.button_Refresh.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Refresh.Location = new System.Drawing.Point(0, 344);
+            this.button_Refresh.Location = new System.Drawing.Point(0, 424);
             this.button_Refresh.Name = "button_Refresh";
             this.button_Refresh.Size = new System.Drawing.Size(239, 40);
             this.button_Refresh.TabIndex = 7;
@@ -544,27 +542,15 @@
             this.button_Refresh.UseVisualStyleBackColor = true;
             this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
             // 
-            // button_Save
+            // toolStripButtonDelete
             // 
-            this.button_Save.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Save.Location = new System.Drawing.Point(0, 384);
-            this.button_Save.Name = "button_Save";
-            this.button_Save.Size = new System.Drawing.Size(239, 40);
-            this.button_Save.TabIndex = 6;
-            this.button_Save.Text = "Сохранить";
-            this.button_Save.UseVisualStyleBackColor = true;
-            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
-            // 
-            // button_SaveAndClose
-            // 
-            this.button_SaveAndClose.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_SaveAndClose.Location = new System.Drawing.Point(0, 424);
-            this.button_SaveAndClose.Name = "button_SaveAndClose";
-            this.button_SaveAndClose.Size = new System.Drawing.Size(239, 40);
-            this.button_SaveAndClose.TabIndex = 5;
-            this.button_SaveAndClose.Text = "Закрыть и Сохранить";
-            this.button_SaveAndClose.UseVisualStyleBackColor = true;
-            this.button_SaveAndClose.Click += new System.EventHandler(this.button_SaveAndClose_Click);
+            this.toolStripButtonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
+            this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(55, 22);
+            this.toolStripButtonDelete.Text = "Удалить";
+            this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
             // 
             // Form_Companies
             // 
@@ -639,8 +625,6 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator5;
         private System.Windows.Forms.DataGridView table_CompaniesDataGridView;
         private System.Windows.Forms.Button button_Refresh;
-        private System.Windows.Forms.Button button_Save;
-        private System.Windows.Forms.Button button_SaveAndClose;
         private System.Windows.Forms.BindingSource tableCompanyTypesBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyTypeID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
@@ -649,5 +633,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Date;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
     }
 }

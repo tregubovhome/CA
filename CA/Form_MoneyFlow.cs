@@ -12,11 +12,6 @@ namespace CA
 {
     public partial class Form_MoneyFlow : Form_BaseStyle
     {
-        public override string BS_caption
-        {
-            set { BS_caption = value; }
-            get { return "Расходы и поступления"; }
-        }
         public override void BS_Fill()
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "cA_DB_DataSet.Table_Materials". При необходимости она может быть перемещена или удалена.
@@ -28,22 +23,12 @@ namespace CA
             // TODO: данная строка кода позволяет загрузить данные в таблицу "cA_DB_DataSet.Table_Projects". При необходимости она может быть перемещена или удалена.
             this.table_ProjectsTableAdapter.Fill(this.cA_DB_DataSet.Table_Projects);
         }
-        public override void BS_LoadData()
+        public override void BS_Save()
         {
-            this.Text = BS_caption;
-            Guid _currMasterID = (Guid)dataGridView1["ProjectID", dataGridView1.CurrentRow.Index].Value;
-            Guid _currSlaveID = (Guid)table_MoneyFlowDataGridView["MoneyFlowID", table_MoneyFlowDataGridView.CurrentRow.Index].Value;
-            BS_Fill();
-            if (_currMasterID != Guid.Empty && _currSlaveID != Guid.Empty)
-            {
-                this.tableProjectsBindingSource.Position = this.tableProjectsBindingSource.Find("id", _currMasterID);
-                DataGridViewRow row = table_MoneyFlowDataGridView.Rows
-                    .Cast<DataGridViewRow>()
-                    .Where(r => r.IsNewRow.Equals(false))
-                    .Where(r => r.Cells["MoneyFlowID"].Value.ToString().Equals(_currSlaveID.ToString()))
-                    .First();
-                this.table_MoneyFlowBindingSource.Position = row.Index;
-            }
+            this.table_MoneyFlowBindingSource.EndEdit();
+            this.table_MoneyFlowTableAdapter.Adapter.Update(cA_DB_DataSet);
+            this.tableProjectsBindingSource.EndEdit();
+            this.table_ProjectsTableAdapter.Adapter.Update(cA_DB_DataSet);
         }
         private void table_MoneyFlowDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
@@ -51,9 +36,18 @@ namespace CA
             e.Row.Cells["Date"].Value = DateTime.Today;
             e.Row.Cells["IsCash"].Value = true;
         }
+        //private bool IsLoaded = false;
         private void table_MoneyFlowDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            BS_DataChanged();
+            //добавить проверку корректности внесенных данных
+            if (e.RowIndex == -1) return;
+            if (e.RowIndex == (sender as DataGridView).RowCount - 1) return;
+            //if (!IsLoaded) return;
+            BS_Save();
+        }
+        private void toolStripButtonDelete_Click(object sender, EventArgs e)
+        {
+            BS_DeleteRow(table_MoneyFlowDataGridView);
         }
         public Form_MoneyFlow()
         { InitializeComponent(); }
@@ -63,21 +57,11 @@ namespace CA
         }
         private void button_Refresh_Click(object sender, EventArgs e)
         {
-            BS_Refresh();
+            BS_Refresh(table_ProjectsDataGridView, table_MoneyFlowDataGridView);
         }
-        private void button_Save_Click(object sender, EventArgs e)
+        private void Form_MoneyFlow_Shown(object sender, EventArgs e)
         {
-            Validate();
-            this.table_MoneyFlowBindingSource.EndEdit();
-            this.table_MoneyFlowTableAdapter.Adapter.Update(cA_DB_DataSet);
-            this.tableProjectsBindingSource.EndEdit();
-            this.table_ProjectsTableAdapter.Adapter.Update(cA_DB_DataSet);
-            this.Text = BS_caption;
-        }
-        private void button_SaveAndClose_Click(object sender, EventArgs e)
-        {
-            button_Save_Click(sender, e);
-            Close();
+            //IsLoaded = true;
         }
     }
 }

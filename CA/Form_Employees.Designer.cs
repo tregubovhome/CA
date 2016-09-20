@@ -56,6 +56,7 @@
             this.tableCompanyTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
+            this.table_EmployeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
@@ -66,21 +67,19 @@
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.table_EmployeesDataGridView = new System.Windows.Forms.DataGridView();
             this.EmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
+            this.OrganizationID = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableCompaniesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.table_EmployeesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.LastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.FirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.MiddleName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Phones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Address = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Comment = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button_Refresh = new System.Windows.Forms.Button();
-            this.button_Save = new System.Windows.Forms.Button();
-            this.button_SaveAndClose = new System.Windows.Forms.Button();
             this.table_CompaniesTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_CompaniesTableAdapter();
             this.tableAdapterManager = new CA.CA_DB_DataSetTableAdapters.TableAdapterManager();
             this.table_CompanyTypesTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_CompanyTypesTableAdapter();
@@ -101,9 +100,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tableCompanyTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.table_EmployeesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_EmployeesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableCompaniesBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.table_EmployeesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -120,8 +119,6 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.Controls.Add(this.button_Refresh);
-            this.splitContainer1.Panel2.Controls.Add(this.button_Save);
-            this.splitContainer1.Panel2.Controls.Add(this.button_SaveAndClose);
             this.splitContainer1.Size = new System.Drawing.Size(1048, 514);
             this.splitContainer1.SplitterDistance = 866;
             this.splitContainer1.TabIndex = 0;
@@ -360,6 +357,7 @@
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem1;
+            this.bindingNavigator1.BindingSource = this.table_EmployeesBindingSource;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem1;
             this.bindingNavigator1.CountItemFormat = "из {0}";
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem1;
@@ -374,7 +372,8 @@
             this.bindingNavigatorMoveLastItem1,
             this.bindingNavigatorSeparator5,
             this.bindingNavigatorAddNewItem1,
-            this.bindingNavigatorDeleteItem1});
+            this.bindingNavigatorDeleteItem1,
+            this.toolStripButtonDelete});
             this.bindingNavigator1.Location = new System.Drawing.Point(0, 0);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem1;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem1;
@@ -396,6 +395,11 @@
             this.bindingNavigatorAddNewItem1.Text = "Добавить";
             this.bindingNavigatorAddNewItem1.Visible = false;
             // 
+            // table_EmployeesBindingSource
+            // 
+            this.table_EmployeesBindingSource.DataMember = "FK_Table_Employees_Table_Companies";
+            this.table_EmployeesBindingSource.DataSource = this.table_CompaniesBindingSource;
+            // 
             // bindingNavigatorCountItem1
             // 
             this.bindingNavigatorCountItem1.Name = "bindingNavigatorCountItem1";
@@ -411,6 +415,7 @@
             this.bindingNavigatorDeleteItem1.RightToLeftAutoMirrorImage = true;
             this.bindingNavigatorDeleteItem1.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorDeleteItem1.Text = "Удалить";
+            this.bindingNavigatorDeleteItem1.Visible = false;
             // 
             // bindingNavigatorMoveFirstItem1
             // 
@@ -472,6 +477,16 @@
             this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
             this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButtonDelete
+            // 
+            this.toolStripButtonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
+            this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(55, 22);
+            this.toolStripButtonDelete.Text = "Удалить";
+            this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
+            // 
             // table_EmployeesDataGridView
             // 
             this.table_EmployeesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -482,14 +497,14 @@
             this.table_EmployeesDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table_EmployeesDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.EmployeeID,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14});
+            this.OrganizationID,
+            this.LastName,
+            this.FirstName,
+            this.MiddleName,
+            this.Phones,
+            this.Email,
+            this.Address,
+            this.Comment});
             this.table_EmployeesDataGridView.DataSource = this.table_EmployeesBindingSource;
             this.table_EmployeesDataGridView.Location = new System.Drawing.Point(0, 28);
             this.table_EmployeesDataGridView.Name = "table_EmployeesDataGridView";
@@ -503,104 +518,76 @@
             this.EmployeeID.DataPropertyName = "id";
             this.EmployeeID.HeaderText = "id";
             this.EmployeeID.Name = "EmployeeID";
-            this.EmployeeID.Visible = false;
             // 
-            // dataGridViewTextBoxColumn7
+            // OrganizationID
             // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "CompanyID";
-            this.dataGridViewTextBoxColumn7.DataSource = this.tableCompaniesBindingSource;
-            this.dataGridViewTextBoxColumn7.DisplayMember = "Name";
-            this.dataGridViewTextBoxColumn7.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
-            this.dataGridViewTextBoxColumn7.HeaderText = "Организация";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dataGridViewTextBoxColumn7.ValueMember = "id";
+            this.OrganizationID.DataPropertyName = "CompanyID";
+            this.OrganizationID.DataSource = this.tableCompaniesBindingSource;
+            this.OrganizationID.DisplayMember = "Name";
+            this.OrganizationID.DisplayStyle = System.Windows.Forms.DataGridViewComboBoxDisplayStyle.Nothing;
+            this.OrganizationID.HeaderText = "Организация";
+            this.OrganizationID.Name = "OrganizationID";
+            this.OrganizationID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.OrganizationID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.OrganizationID.ValueMember = "id";
             // 
             // tableCompaniesBindingSource
             // 
             this.tableCompaniesBindingSource.DataMember = "Table_Companies";
             this.tableCompaniesBindingSource.DataSource = this.cA_DB_DataSet;
             // 
-            // dataGridViewTextBoxColumn8
+            // LastName
             // 
-            this.dataGridViewTextBoxColumn8.DataPropertyName = "LastName";
-            this.dataGridViewTextBoxColumn8.HeaderText = "Фамилия";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.LastName.DataPropertyName = "LastName";
+            this.LastName.HeaderText = "Фамилия";
+            this.LastName.Name = "LastName";
             // 
-            // dataGridViewTextBoxColumn9
+            // FirstName
             // 
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "FirstName";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Имя";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.FirstName.DataPropertyName = "FirstName";
+            this.FirstName.HeaderText = "Имя";
+            this.FirstName.Name = "FirstName";
             // 
-            // dataGridViewTextBoxColumn10
+            // MiddleName
             // 
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "MiddleName";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Отчество";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.MiddleName.DataPropertyName = "MiddleName";
+            this.MiddleName.HeaderText = "Отчество";
+            this.MiddleName.Name = "MiddleName";
             // 
-            // dataGridViewTextBoxColumn11
+            // Phones
             // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "Phones";
-            this.dataGridViewTextBoxColumn11.HeaderText = "Телефоны";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.Phones.DataPropertyName = "Phones";
+            this.Phones.HeaderText = "Телефоны";
+            this.Phones.Name = "Phones";
             // 
-            // dataGridViewTextBoxColumn12
+            // Email
             // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Email";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Email";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.Email.DataPropertyName = "Email";
+            this.Email.HeaderText = "Email";
+            this.Email.Name = "Email";
             // 
-            // dataGridViewTextBoxColumn13
+            // Address
             // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Address";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Адрес";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.Address.DataPropertyName = "Address";
+            this.Address.HeaderText = "Адрес";
+            this.Address.Name = "Address";
             // 
-            // dataGridViewTextBoxColumn14
+            // Comment
             // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Comment";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Комментарий";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // table_EmployeesBindingSource
-            // 
-            this.table_EmployeesBindingSource.DataMember = "FK_Table_Employees_Table_Companies";
-            this.table_EmployeesBindingSource.DataSource = this.table_CompaniesBindingSource;
+            this.Comment.DataPropertyName = "Comment";
+            this.Comment.HeaderText = "Комментарий";
+            this.Comment.Name = "Comment";
             // 
             // button_Refresh
             // 
             this.button_Refresh.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Refresh.Location = new System.Drawing.Point(0, 390);
+            this.button_Refresh.Location = new System.Drawing.Point(0, 470);
             this.button_Refresh.Name = "button_Refresh";
             this.button_Refresh.Size = new System.Drawing.Size(174, 40);
             this.button_Refresh.TabIndex = 10;
             this.button_Refresh.Text = "Обновить";
             this.button_Refresh.UseVisualStyleBackColor = true;
             this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
-            // 
-            // button_Save
-            // 
-            this.button_Save.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Save.Location = new System.Drawing.Point(0, 430);
-            this.button_Save.Name = "button_Save";
-            this.button_Save.Size = new System.Drawing.Size(174, 40);
-            this.button_Save.TabIndex = 9;
-            this.button_Save.Text = "Сохранить";
-            this.button_Save.UseVisualStyleBackColor = true;
-            this.button_Save.Click += new System.EventHandler(this.button_Save_Click);
-            // 
-            // button_SaveAndClose
-            // 
-            this.button_SaveAndClose.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_SaveAndClose.Location = new System.Drawing.Point(0, 470);
-            this.button_SaveAndClose.Name = "button_SaveAndClose";
-            this.button_SaveAndClose.Size = new System.Drawing.Size(174, 40);
-            this.button_SaveAndClose.TabIndex = 8;
-            this.button_SaveAndClose.Text = "Закрыть и Сохранить";
-            this.button_SaveAndClose.UseVisualStyleBackColor = true;
-            this.button_SaveAndClose.Click += new System.EventHandler(this.button_SaveAndClose_Click);
             // 
             // table_CompaniesTableAdapter
             // 
@@ -662,9 +649,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.table_EmployeesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_EmployeesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableCompaniesBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.table_EmployeesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -696,7 +683,6 @@
         private System.Windows.Forms.BindingNavigator bindingNavigator1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem1;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem1;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem1;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator3;
@@ -710,21 +696,21 @@
         private System.Windows.Forms.BindingSource tableCompanyTypesBindingSource;
         private System.Windows.Forms.BindingSource tableCompaniesBindingSource;
         private System.Windows.Forms.Button button_Refresh;
-        private System.Windows.Forms.Button button_Save;
-        private System.Windows.Forms.Button button_SaveAndClose;
         private System.Windows.Forms.DataGridViewTextBoxColumn CompanyID;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeID;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridViewComboBoxColumn OrganizationID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn FirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MiddleName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Phones;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Address;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Comment;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
     }
 }

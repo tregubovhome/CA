@@ -12,11 +12,6 @@ namespace CA
 {
     public partial class Form_Materials : Form_BaseStyle
     {
-        public override string BS_caption
-        {
-            set { BS_caption = value; }
-            get { return "Материалы"; }
-        }
         public override void BS_Fill()
         {
             // TODO: данная строка кода позволяет загрузить данные в таблицу "cA_DB_DataSet.Table_MeasureUnits". При необходимости она может быть перемещена или удалена.
@@ -32,22 +27,12 @@ namespace CA
             // TODO: данная строка кода позволяет загрузить данные в таблицу "cA_DB_DataSet.Table_MaterialGroups". При необходимости она может быть перемещена или удалена.
             this.table_MaterialGroupsTableAdapter.Fill(this.cA_DB_DataSet.Table_MaterialGroups);
         }
-        public override void BS_LoadData()
+        public override void BS_Save()
         {
-            this.Text = BS_caption;
-            Guid _currMasterID = (Guid)table_MaterialGroupsDataGridView["GroupID", table_MaterialGroupsDataGridView.CurrentRow.Index].Value;
-            Guid _currSlaveID = (Guid)table_MaterialsDataGridView["MaterialID", table_MaterialsDataGridView.CurrentRow.Index].Value;
-            BS_Fill();
-            if (_currMasterID != Guid.Empty && _currSlaveID != Guid.Empty)
-            {
-                this.table_MaterialGroupsBindingSource.Position = this.table_MaterialGroupsBindingSource.Find("id", _currMasterID);
-                DataGridViewRow row = table_MaterialsDataGridView.Rows
-                    .Cast<DataGridViewRow>()
-                    .Where(r => r.IsNewRow.Equals(false))
-                    .Where(r => r.Cells["MaterialID"].Value.ToString().Equals(_currSlaveID.ToString()))
-                    .First();
-                this.table_MaterialsBindingSource.Position = row.Index;
-            }
+            this.table_MaterialGroupsBindingSource.EndEdit();
+            this.table_MaterialGroupsTableAdapter.Adapter.Update(cA_DB_DataSet);
+            this.table_MaterialsBindingSource.EndEdit();
+            this.table_MaterialsTableAdapter.Adapter.Update(cA_DB_DataSet);
         }
         private void table_MaterialGroupsDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
@@ -56,14 +41,30 @@ namespace CA
         private void table_MaterialsDataGridView_DefaultValuesNeeded(object sender, DataGridViewRowEventArgs e)
         {
             e.Row.Cells["MaterialID"].Value = Guid.NewGuid();
+            e.Row.Cells["IsWork"].Value = false;
+            e.Row.Cells["MaterialName"].Value = "наименование";
+            e.Row.Cells["MaterialMeasureUnitID"].Value = "8da54887-aace-4bc6-b0c6-34a3fa037b39";
         }
         private void table_MaterialsDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            BS_DataChanged();
+            //добавить проверку корректности внесенных данных
+            if (e.RowIndex == -1) return;
+            if (e.RowIndex == (sender as DataGridView).RowCount - 1) return;
+            BS_Save();
         }
         private void table_MaterialGroupsDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
-            BS_DataChanged();
+            if (e.RowIndex == -1) return;
+            if (e.RowIndex == (sender as DataGridView).RowCount - 1) return;
+            BS_Save();
+        }
+        private void toolStripButtonDelete_Click(object sender, EventArgs e)
+        {
+            //BS_Delete(table_MaterialsDataGridView); ссылки в базе !!!
+        }
+        private void toolStripButtonDeleteGroup_Click(object sender, EventArgs e)
+        {
+            //BS_Delete(table_MaterialGroupsDataGridView); Придумать как удалять/перемещать материалы удаляемой группы
         }
         public Form_Materials()
         { InitializeComponent(); }
@@ -79,21 +80,7 @@ namespace CA
         }
         private void button_Refresh_Click(object sender, EventArgs e)
         {
-            BS_Refresh();
-        }
-        private void button_Save_Click(object sender, EventArgs e)
-        {
-            Validate();
-            this.table_MaterialGroupsBindingSource.EndEdit();
-            this.table_MaterialGroupsTableAdapter.Adapter.Update(cA_DB_DataSet);
-            this.table_MaterialsBindingSource.EndEdit();
-            this.table_MaterialsTableAdapter.Adapter.Update(cA_DB_DataSet);
-            this.Text = BS_caption;
-        }
-        private void button_SaveAndClose_Click(object sender, EventArgs e)
-        {
-            button_Save_Click(sender, e);
-            Close();
+            BS_Refresh(table_MaterialGroupsDataGridView, table_MaterialsDataGridView);
         }
     }
 }
