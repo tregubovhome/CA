@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_MoneyFlow));
             this.table_ProjectsDataGridView = new System.Windows.Forms.DataGridView();
             this.ProjectID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -133,7 +134,7 @@
             this.sumDataGridViewTextBoxColumn,
             this.projectStatusIDDataGridViewTextBoxColumn});
             this.table_ProjectsDataGridView.DataSource = this.tableProjectsBindingSource;
-            this.table_ProjectsDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.table_ProjectsDataGridView.Location = new System.Drawing.Point(0, 25);
             this.table_ProjectsDataGridView.MultiSelect = false;
             this.table_ProjectsDataGridView.Name = "table_ProjectsDataGridView";
             this.table_ProjectsDataGridView.ReadOnly = true;
@@ -283,8 +284,9 @@
             this.table_MoneyFlowDataGridView.Location = new System.Drawing.Point(0, 25);
             this.table_MoneyFlowDataGridView.MultiSelect = false;
             this.table_MoneyFlowDataGridView.Name = "table_MoneyFlowDataGridView";
-            this.table_MoneyFlowDataGridView.Size = new System.Drawing.Size(733, 221);
+            this.table_MoneyFlowDataGridView.Size = new System.Drawing.Size(733, 208);
             this.table_MoneyFlowDataGridView.TabIndex = 2;
+            this.table_MoneyFlowDataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.table_MoneyFlowDataGridView_CellBeginEdit);
             this.table_MoneyFlowDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_MoneyFlowDataGridView_CellValueChanged);
             this.table_MoneyFlowDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.table_MoneyFlowDataGridView_DefaultValuesNeeded);
             // 
@@ -306,6 +308,10 @@
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Sum";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.dataGridViewTextBoxColumn3.DefaultCellStyle = dataGridViewCellStyle1;
             this.dataGridViewTextBoxColumn3.HeaderText = "Сумма";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
             this.dataGridViewTextBoxColumn3.Width = 66;
@@ -699,7 +705,6 @@
             this.Name = "Form_MoneyFlow";
             this.Text = "Расходы и поступления";
             this.Load += new System.EventHandler(this.Form_MoneyFlow_Load);
-            this.Shown += new System.EventHandler(this.Form_MoneyFlow_Shown);
             ((System.ComponentModel.ISupportInitialize)(this.table_ProjectsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableProjectsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cA_DB_DataSet)).EndInit();
@@ -772,14 +777,6 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem1;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator5;
         private System.Windows.Forms.Button button_Refresh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MoneyFlowID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewCheckBoxColumn IsCash;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
         private System.Windows.Forms.DataGridViewTextBoxColumn ProjectID;
         private System.Windows.Forms.DataGridViewTextBoxColumn companyIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn commentDataGridViewTextBoxColumn;
@@ -790,5 +787,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn sumDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn projectStatusIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
+        private System.Windows.Forms.DataGridViewTextBoxColumn MoneyFlowID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Date;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn IsCash;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }

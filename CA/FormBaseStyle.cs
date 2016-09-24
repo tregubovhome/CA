@@ -13,7 +13,7 @@ namespace CA
     public partial class Form_BaseStyle : Form
     {
         public virtual void BS_Fill() { }
-        public virtual void BS_Refresh(DataGridView dgvMaster, DataGridView dgvSlave) 
+        public virtual void BS_Refresh(DataGridView dgvMaster, DataGridView dgvSlave)
         {
             Guid _currMasterID = (dgvMaster.CurrentRow != null) ? (Guid)dgvMaster[0, dgvMaster.CurrentRow.Index].Value : Guid.Empty;
             Guid _currSlaveID = (dgvSlave.CurrentRow != null) ? (Guid)dgvSlave[0, dgvSlave.CurrentRow.Index].Value : Guid.Empty;
@@ -45,6 +45,33 @@ namespace CA
                 dgv.Rows.Remove(r);
                 BS_Save();
             }
+        }
+        public void BS_SpecialEdit(DataGridView dgv, DataGridViewCellCancelEventArgs e)
+        {
+            if (dgv.Columns[e.ColumnIndex].ValueType.Name.Equals("DateTime"))
+            {
+                FormEdit_Calendar form = new FormEdit_Calendar((DateTime)dgv[e.ColumnIndex, e.RowIndex].Value);
+                form.ShowDialog();
+                dgv[e.ColumnIndex, e.RowIndex].Value = form.Value;
+                EndEdit();
+            }
+            else if (dgv.Columns[e.ColumnIndex].ValueType.Name.Equals("Decimal"))
+            {
+                FormEdit_Calculator form = new FormEdit_Calculator(dgv[e.ColumnIndex, e.RowIndex].Value.ToString());
+                form.ShowDialog();
+                dgv[e.ColumnIndex, e.RowIndex].Value = form.Value;
+                EndEdit();
+            }
+        }
+        private void EndEdit()
+        {
+            SendKeys.Send("{Right}");
+            SendKeys.Send("{Right}");
+            SendKeys.Send("{Left}");
+            /*DataGridViewEditMode oldMode = dgv.EditMode;
+            dgv.EditMode = DataGridViewEditMode.EditProgrammatically;
+            dgv.EndEdit();
+            dgv.EditMode = oldMode;*/
         }
         public Form_BaseStyle()
         { InitializeComponent(); }

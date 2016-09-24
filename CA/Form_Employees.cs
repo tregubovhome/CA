@@ -32,6 +32,10 @@ namespace CA
         {
             e.Row.Cells["EmployeeID"].Value = Guid.NewGuid();
         }
+        private void table_EmployeesDataGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            BS_SpecialEdit(sender as DataGridView, e);
+        }
         private void table_EmployeesDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             //добавить проверку корректности внесенных данных
@@ -41,16 +45,10 @@ namespace CA
         }
         private void toolStripButtonDelete_Click(object sender, EventArgs e)
         {
-            //BS_Delete(table_EmployeesDataGridView); ссылки в базе !!!
+            //BS_DeleteRow(table_EmployeesDataGridView); ссылки в базе !!!
         }
         public Form_Employees()
         { InitializeComponent(); }
-        /*private void table_CompaniesBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.table_CompaniesBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.cA_DB_DataSet);
-        }*/
         private void Form_Employees_Load(object sender, EventArgs e)
         {
             BS_Fill();

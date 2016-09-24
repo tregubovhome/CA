@@ -300,10 +300,10 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5});
             this.table_CompaniesDataGridView.DataSource = this.table_CompaniesBindingSource;
-            this.table_CompaniesDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.table_CompaniesDataGridView.Location = new System.Drawing.Point(0, 25);
             this.table_CompaniesDataGridView.Name = "table_CompaniesDataGridView";
             this.table_CompaniesDataGridView.ReadOnly = true;
-            this.table_CompaniesDataGridView.Size = new System.Drawing.Size(862, 173);
+            this.table_CompaniesDataGridView.Size = new System.Drawing.Size(862, 179);
             this.table_CompaniesDataGridView.TabIndex = 0;
             // 
             // CompanyID
@@ -506,10 +506,11 @@
             this.Address,
             this.Comment});
             this.table_EmployeesDataGridView.DataSource = this.table_EmployeesBindingSource;
-            this.table_EmployeesDataGridView.Location = new System.Drawing.Point(0, 28);
+            this.table_EmployeesDataGridView.Location = new System.Drawing.Point(0, 25);
             this.table_EmployeesDataGridView.Name = "table_EmployeesDataGridView";
-            this.table_EmployeesDataGridView.Size = new System.Drawing.Size(861, 269);
+            this.table_EmployeesDataGridView.Size = new System.Drawing.Size(861, 274);
             this.table_EmployeesDataGridView.TabIndex = 0;
+            this.table_EmployeesDataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.table_EmployeesDataGridView_CellBeginEdit);
             this.table_EmployeesDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_EmployeesDataGridView_CellValueChanged);
             this.table_EmployeesDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.table_EmployeesDataGridView_DefaultValuesNeeded);
             // 
@@ -518,6 +519,7 @@
             this.EmployeeID.DataPropertyName = "id";
             this.EmployeeID.HeaderText = "id";
             this.EmployeeID.Name = "EmployeeID";
+            this.EmployeeID.Visible = false;
             // 
             // OrganizationID
             // 
@@ -701,6 +703,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewComboBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem1;
+        private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
         private System.Windows.Forms.DataGridViewTextBoxColumn EmployeeID;
         private System.Windows.Forms.DataGridViewComboBoxColumn OrganizationID;
         private System.Windows.Forms.DataGridViewTextBoxColumn LastName;
@@ -710,7 +714,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Email;
         private System.Windows.Forms.DataGridViewTextBoxColumn Address;
         private System.Windows.Forms.DataGridViewTextBoxColumn Comment;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem1;
-        private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
     }
 }

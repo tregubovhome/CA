@@ -38,6 +38,10 @@ namespace CA
             e.Row.Cells["Num"].Value = dtmax + 1;
             e.Row.Cells["Date"].Value = DateTime.Today;
         }
+        private void table_CompaniesDataGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            BS_SpecialEdit(sender as DataGridView, e);
+        }
         private void table_CompaniesDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             //добавить проверку корректности внесенных данных

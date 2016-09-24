@@ -32,7 +32,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Companies));
             this.table_CompanyTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cA_DB_DataSet = new CA.CA_DB_DataSet();
-            this.table_CompaniesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.table_CompanyTypesTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_CompanyTypesTableAdapter();
             this.tableAdapterManager = new CA.CA_DB_DataSetTableAdapters.TableAdapterManager();
             this.table_CompaniesTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_CompaniesTableAdapter();
@@ -66,6 +65,7 @@
             this.bindingNavigatorMoveNextItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveLastItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator5 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             this.table_CompaniesDataGridView = new System.Windows.Forms.DataGridView();
             this.CompanyID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Num = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,11 +73,10 @@
             this.Date = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableCompanyTypesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.table_CompaniesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button_Refresh = new System.Windows.Forms.Button();
-            this.toolStripButtonDelete = new System.Windows.Forms.ToolStripButton();
             ((System.ComponentModel.ISupportInitialize)(this.table_CompanyTypesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.cA_DB_DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -93,6 +92,7 @@
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableCompanyTypesBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // table_CompanyTypesBindingSource
@@ -104,11 +104,6 @@
             // 
             this.cA_DB_DataSet.DataSetName = "CA_DB_DataSet";
             this.cA_DB_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // table_CompaniesBindingSource
-            // 
-            this.table_CompaniesBindingSource.DataMember = "FK_Table_Companies_Table_CompanyTypes";
-            this.table_CompaniesBindingSource.DataSource = this.table_CompanyTypesBindingSource;
             // 
             // table_CompanyTypesTableAdapter
             // 
@@ -152,7 +147,7 @@
             // 
             this.splitContainer1.Panel2.Controls.Add(this.button_Refresh);
             this.splitContainer1.Size = new System.Drawing.Size(965, 468);
-            this.splitContainer1.SplitterDistance = 718;
+            this.splitContainer1.SplitterDistance = 787;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -174,7 +169,7 @@
             this.splitContainer2.Panel2.AutoScroll = true;
             this.splitContainer2.Panel2.Controls.Add(this.bindingNavigator1);
             this.splitContainer2.Panel2.Controls.Add(this.table_CompaniesDataGridView);
-            this.splitContainer2.Size = new System.Drawing.Size(718, 468);
+            this.splitContainer2.Size = new System.Drawing.Size(787, 468);
             this.splitContainer2.SplitterDistance = 148;
             this.splitContainer2.TabIndex = 0;
             // 
@@ -205,7 +200,7 @@
             this.table_CompanyTypesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.table_CompanyTypesBindingNavigator.Name = "table_CompanyTypesBindingNavigator";
             this.table_CompanyTypesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.table_CompanyTypesBindingNavigator.Size = new System.Drawing.Size(714, 25);
+            this.table_CompanyTypesBindingNavigator.Size = new System.Drawing.Size(783, 25);
             this.table_CompanyTypesBindingNavigator.TabIndex = 1;
             this.table_CompanyTypesBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -319,12 +314,12 @@
             this.CompanyTypeID,
             this.dataGridViewTextBoxColumn2});
             this.table_CompanyTypesDataGridView.DataSource = this.table_CompanyTypesBindingSource;
-            this.table_CompanyTypesDataGridView.Location = new System.Drawing.Point(0, 27);
+            this.table_CompanyTypesDataGridView.Location = new System.Drawing.Point(0, 25);
             this.table_CompanyTypesDataGridView.MultiSelect = false;
             this.table_CompanyTypesDataGridView.Name = "table_CompanyTypesDataGridView";
             this.table_CompanyTypesDataGridView.ReadOnly = true;
             this.table_CompanyTypesDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.table_CompanyTypesDataGridView.Size = new System.Drawing.Size(714, 122);
+            this.table_CompanyTypesDataGridView.Size = new System.Drawing.Size(783, 119);
             this.table_CompanyTypesDataGridView.TabIndex = 0;
             // 
             // CompanyTypeID
@@ -370,7 +365,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(714, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(783, 25);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -461,6 +456,16 @@
             this.bindingNavigatorSeparator5.Name = "bindingNavigatorSeparator5";
             this.bindingNavigatorSeparator5.Size = new System.Drawing.Size(6, 25);
             // 
+            // toolStripButtonDelete
+            // 
+            this.toolStripButtonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
+            this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
+            this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
+            this.toolStripButtonDelete.Size = new System.Drawing.Size(55, 22);
+            this.toolStripButtonDelete.Text = "Удалить";
+            this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
+            // 
             // table_CompaniesDataGridView
             // 
             this.table_CompaniesDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -476,11 +481,12 @@
             this.Date,
             this.dataGridViewTextBoxColumn7});
             this.table_CompaniesDataGridView.DataSource = this.table_CompaniesBindingSource;
-            this.table_CompaniesDataGridView.Location = new System.Drawing.Point(-2, 25);
+            this.table_CompaniesDataGridView.Location = new System.Drawing.Point(0, 25);
             this.table_CompaniesDataGridView.MultiSelect = false;
             this.table_CompaniesDataGridView.Name = "table_CompaniesDataGridView";
-            this.table_CompaniesDataGridView.Size = new System.Drawing.Size(716, 286);
+            this.table_CompaniesDataGridView.Size = new System.Drawing.Size(782, 288);
             this.table_CompaniesDataGridView.TabIndex = 0;
+            this.table_CompaniesDataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.table_CompaniesDataGridView_CellBeginEdit);
             this.table_CompaniesDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_CompaniesDataGridView_CellValueChanged);
             this.table_CompaniesDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.table_CompaniesDataGridView_DefaultValuesNeeded);
             // 
@@ -531,26 +537,21 @@
             this.tableCompanyTypesBindingSource.DataMember = "Table_CompanyTypes";
             this.tableCompanyTypesBindingSource.DataSource = this.cA_DB_DataSet;
             // 
+            // table_CompaniesBindingSource
+            // 
+            this.table_CompaniesBindingSource.DataMember = "FK_Table_Companies_Table_CompanyTypes";
+            this.table_CompaniesBindingSource.DataSource = this.table_CompanyTypesBindingSource;
+            // 
             // button_Refresh
             // 
             this.button_Refresh.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.button_Refresh.Location = new System.Drawing.Point(0, 424);
             this.button_Refresh.Name = "button_Refresh";
-            this.button_Refresh.Size = new System.Drawing.Size(239, 40);
+            this.button_Refresh.Size = new System.Drawing.Size(170, 40);
             this.button_Refresh.TabIndex = 7;
             this.button_Refresh.Text = "Обновить";
             this.button_Refresh.UseVisualStyleBackColor = true;
             this.button_Refresh.Click += new System.EventHandler(this.button_Refresh_Click);
-            // 
-            // toolStripButtonDelete
-            // 
-            this.toolStripButtonDelete.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.toolStripButtonDelete.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonDelete.Image")));
-            this.toolStripButtonDelete.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButtonDelete.Name = "toolStripButtonDelete";
-            this.toolStripButtonDelete.Size = new System.Drawing.Size(55, 22);
-            this.toolStripButtonDelete.Text = "Удалить";
-            this.toolStripButtonDelete.Click += new System.EventHandler(this.toolStripButtonDelete_Click);
             // 
             // Form_Companies
             // 
@@ -563,7 +564,6 @@
             this.Load += new System.EventHandler(this.Form_Companies_Load);
             ((System.ComponentModel.ISupportInitialize)(this.table_CompanyTypesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.cA_DB_DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesBindingSource)).EndInit();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -583,6 +583,7 @@
             this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableCompanyTypesBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.table_CompaniesBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

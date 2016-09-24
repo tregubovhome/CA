@@ -18,3 +18,8 @@ F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.F
 F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_Companies.resources
 F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_Employees.resources
 F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_Materials.resources
+F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_MeasureUnits.resources
+F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_Calendar.resources
+F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_Projects.resources
+F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_ProjectCurrent.resources
+F:\Мои документы\Visual Studio 2013\Projects\CA\CA\CA\obj\Debug\CA.Form_Calculator.resources

@@ -973,79 +973,6 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_MoneyFlowTableAdapter" GeneratorDataComponentClassName="View_MoneyFlowTableAdapter" Name="View_MoneyFlow" UserDataComponentName="View_MoneyFlowTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="CA_DB_ConnectionString (Settings)" DbObjectName="CA_DB.dbo.View_MoneyFlow" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Дата, Сумма, Наличные, Комментарий, Заказ, Материал, Фамилия, Имя, ProjectID FROM dbo.View_MoneyFlow</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="Дата" DataSetColumn="Дата" />
-              <Mapping SourceColumn="Сумма" DataSetColumn="Сумма" />
-              <Mapping SourceColumn="Наличные" DataSetColumn="Наличные" />
-              <Mapping SourceColumn="Комментарий" DataSetColumn="Комментарий" />
-              <Mapping SourceColumn="Заказ" DataSetColumn="Заказ" />
-              <Mapping SourceColumn="Материал" DataSetColumn="Материал" />
-              <Mapping SourceColumn="Фамилия" DataSetColumn="Фамилия" />
-              <Mapping SourceColumn="Имя" DataSetColumn="Имя" />
-              <Mapping SourceColumn="ProjectID" DataSetColumn="ProjectID" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_ProjectsTableAdapter" GeneratorDataComponentClassName="View_ProjectsTableAdapter" Name="View_Projects" UserDataComponentName="View_ProjectsTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="CA_DB_ConnectionString (Settings)" DbObjectName="CA_DB.dbo.View_Projects" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT id, Название, Создан, Маржа, Сумма, Комментарий, Заказчик, Статус FROM dbo.View_Projects</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="id" DataSetColumn="id" />
-              <Mapping SourceColumn="Название" DataSetColumn="Название" />
-              <Mapping SourceColumn="Создан" DataSetColumn="Создан" />
-              <Mapping SourceColumn="Маржа" DataSetColumn="Маржа" />
-              <Mapping SourceColumn="Сумма" DataSetColumn="Сумма" />
-              <Mapping SourceColumn="Комментарий" DataSetColumn="Комментарий" />
-              <Mapping SourceColumn="Заказчик" DataSetColumn="Заказчик" />
-              <Mapping SourceColumn="Статус" DataSetColumn="Статус" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="View_EmployeesTableAdapter" GeneratorDataComponentClassName="View_EmployeesTableAdapter" Name="View_Employees" UserDataComponentName="View_EmployeesTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="CA_DB_ConnectionString (Settings)" DbObjectName="CA_DB.dbo.View_Employees" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT LastName, FirstName, MiddleName, Phones, Email, Address, Comment, Num, Name, Date, Expr1 FROM dbo.View_Employees</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
-              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
-              <Mapping SourceColumn="MiddleName" DataSetColumn="MiddleName" />
-              <Mapping SourceColumn="Phones" DataSetColumn="Phones" />
-              <Mapping SourceColumn="Email" DataSetColumn="Email" />
-              <Mapping SourceColumn="Address" DataSetColumn="Address" />
-              <Mapping SourceColumn="Comment" DataSetColumn="Comment" />
-              <Mapping SourceColumn="Num" DataSetColumn="Num" />
-              <Mapping SourceColumn="Name" DataSetColumn="Name" />
-              <Mapping SourceColumn="Date" DataSetColumn="Date" />
-              <Mapping SourceColumn="Expr1" DataSetColumn="Expr1" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
         </Tables>
         <Sources />
       </DataSource>
@@ -1054,7 +981,7 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
   <xs:element name="CA_DB_DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="CA_DB_DataSet" msprop:Generator_UserDSName="CA_DB_DataSet">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="Table_Companies" msprop:Generator_TableClassName="Table_CompaniesDataTable" msprop:Generator_TableVarName="tableTable_Companies" msprop:Generator_RowChangedName="Table_CompaniesRowChanged" msprop:Generator_TablePropName="Table_Companies" msprop:Generator_RowDeletingName="Table_CompaniesRowDeleting" msprop:Generator_RowChangingName="Table_CompaniesRowChanging" msprop:Generator_RowEvHandlerName="Table_CompaniesRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_CompaniesRowDeleted" msprop:Generator_RowClassName="Table_CompaniesRow" msprop:Generator_UserTableName="Table_Companies" msprop:Generator_RowEvArgName="Table_CompaniesRowChangeEvent">
+        <xs:element name="Table_Companies" msprop:Generator_TableClassName="Table_CompaniesDataTable" msprop:Generator_TableVarName="tableTable_Companies" msprop:Generator_TablePropName="Table_Companies" msprop:Generator_RowDeletingName="Table_CompaniesRowDeleting" msprop:Generator_RowChangingName="Table_CompaniesRowChanging" msprop:Generator_RowEvHandlerName="Table_CompaniesRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_CompaniesRowDeleted" msprop:Generator_UserTableName="Table_Companies" msprop:Generator_RowChangedName="Table_CompaniesRowChanged" msprop:Generator_RowEvArgName="Table_CompaniesRowChangeEvent" msprop:Generator_RowClassName="Table_CompaniesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -1071,7 +998,7 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Table_CompanyTypes" msprop:Generator_TableClassName="Table_CompanyTypesDataTable" msprop:Generator_TableVarName="tableTable_CompanyTypes" msprop:Generator_RowChangedName="Table_CompanyTypesRowChanged" msprop:Generator_TablePropName="Table_CompanyTypes" msprop:Generator_RowDeletingName="Table_CompanyTypesRowDeleting" msprop:Generator_RowChangingName="Table_CompanyTypesRowChanging" msprop:Generator_RowEvHandlerName="Table_CompanyTypesRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_CompanyTypesRowDeleted" msprop:Generator_RowClassName="Table_CompanyTypesRow" msprop:Generator_UserTableName="Table_CompanyTypes" msprop:Generator_RowEvArgName="Table_CompanyTypesRowChangeEvent">
+        <xs:element name="Table_CompanyTypes" msprop:Generator_TableClassName="Table_CompanyTypesDataTable" msprop:Generator_TableVarName="tableTable_CompanyTypes" msprop:Generator_TablePropName="Table_CompanyTypes" msprop:Generator_RowDeletingName="Table_CompanyTypesRowDeleting" msprop:Generator_RowChangingName="Table_CompanyTypesRowChanging" msprop:Generator_RowEvHandlerName="Table_CompanyTypesRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_CompanyTypesRowDeleted" msprop:Generator_UserTableName="Table_CompanyTypes" msprop:Generator_RowChangedName="Table_CompanyTypesRowChanged" msprop:Generator_RowEvArgName="Table_CompanyTypesRowChangeEvent" msprop:Generator_RowClassName="Table_CompanyTypesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -1085,7 +1012,7 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Table_Employees" msprop:Generator_TableClassName="Table_EmployeesDataTable" msprop:Generator_TableVarName="tableTable_Employees" msprop:Generator_RowChangedName="Table_EmployeesRowChanged" msprop:Generator_TablePropName="Table_Employees" msprop:Generator_RowDeletingName="Table_EmployeesRowDeleting" msprop:Generator_RowChangingName="Table_EmployeesRowChanging" msprop:Generator_RowEvHandlerName="Table_EmployeesRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_EmployeesRowDeleted" msprop:Generator_RowClassName="Table_EmployeesRow" msprop:Generator_UserTableName="Table_Employees" msprop:Generator_RowEvArgName="Table_EmployeesRowChangeEvent">
+        <xs:element name="Table_Employees" msprop:Generator_TableClassName="Table_EmployeesDataTable" msprop:Generator_TableVarName="tableTable_Employees" msprop:Generator_TablePropName="Table_Employees" msprop:Generator_RowDeletingName="Table_EmployeesRowDeleting" msprop:Generator_RowChangingName="Table_EmployeesRowChanging" msprop:Generator_RowEvHandlerName="Table_EmployeesRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_EmployeesRowDeleted" msprop:Generator_UserTableName="Table_Employees" msprop:Generator_RowChangedName="Table_EmployeesRowChanged" msprop:Generator_RowEvArgName="Table_EmployeesRowChangeEvent" msprop:Generator_RowClassName="Table_EmployeesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -1142,7 +1069,7 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Table_History" msprop:Generator_TableClassName="Table_HistoryDataTable" msprop:Generator_TableVarName="tableTable_History" msprop:Generator_RowChangedName="Table_HistoryRowChanged" msprop:Generator_TablePropName="Table_History" msprop:Generator_RowDeletingName="Table_HistoryRowDeleting" msprop:Generator_RowChangingName="Table_HistoryRowChanging" msprop:Generator_RowEvHandlerName="Table_HistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_HistoryRowDeleted" msprop:Generator_RowClassName="Table_HistoryRow" msprop:Generator_UserTableName="Table_History" msprop:Generator_RowEvArgName="Table_HistoryRowChangeEvent">
+        <xs:element name="Table_History" msprop:Generator_TableClassName="Table_HistoryDataTable" msprop:Generator_TableVarName="tableTable_History" msprop:Generator_TablePropName="Table_History" msprop:Generator_RowDeletingName="Table_HistoryRowDeleting" msprop:Generator_RowChangingName="Table_HistoryRowChanging" msprop:Generator_RowEvHandlerName="Table_HistoryRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_HistoryRowDeleted" msprop:Generator_UserTableName="Table_History" msprop:Generator_RowChangedName="Table_HistoryRowChanged" msprop:Generator_RowEvArgName="Table_HistoryRowChangeEvent" msprop:Generator_RowClassName="Table_HistoryRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -1187,7 +1114,7 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Table_MaterialGroups" msprop:Generator_TableClassName="Table_MaterialGroupsDataTable" msprop:Generator_TableVarName="tableTable_MaterialGroups" msprop:Generator_RowChangedName="Table_MaterialGroupsRowChanged" msprop:Generator_TablePropName="Table_MaterialGroups" msprop:Generator_RowDeletingName="Table_MaterialGroupsRowDeleting" msprop:Generator_RowChangingName="Table_MaterialGroupsRowChanging" msprop:Generator_RowEvHandlerName="Table_MaterialGroupsRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_MaterialGroupsRowDeleted" msprop:Generator_RowClassName="Table_MaterialGroupsRow" msprop:Generator_UserTableName="Table_MaterialGroups" msprop:Generator_RowEvArgName="Table_MaterialGroupsRowChangeEvent">
+        <xs:element name="Table_MaterialGroups" msprop:Generator_TableClassName="Table_MaterialGroupsDataTable" msprop:Generator_TableVarName="tableTable_MaterialGroups" msprop:Generator_TablePropName="Table_MaterialGroups" msprop:Generator_RowDeletingName="Table_MaterialGroupsRowDeleting" msprop:Generator_RowChangingName="Table_MaterialGroupsRowChanging" msprop:Generator_RowEvHandlerName="Table_MaterialGroupsRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_MaterialGroupsRowDeleted" msprop:Generator_UserTableName="Table_MaterialGroups" msprop:Generator_RowChangedName="Table_MaterialGroupsRowChanged" msprop:Generator_RowEvArgName="Table_MaterialGroupsRowChangeEvent" msprop:Generator_RowClassName="Table_MaterialGroupsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -1201,7 +1128,7 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Table_Materials" msprop:Generator_TableClassName="Table_MaterialsDataTable" msprop:Generator_TableVarName="tableTable_Materials" msprop:Generator_RowChangedName="Table_MaterialsRowChanged" msprop:Generator_TablePropName="Table_Materials" msprop:Generator_RowDeletingName="Table_MaterialsRowDeleting" msprop:Generator_RowChangingName="Table_MaterialsRowChanging" msprop:Generator_RowEvHandlerName="Table_MaterialsRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_MaterialsRowDeleted" msprop:Generator_RowClassName="Table_MaterialsRow" msprop:Generator_UserTableName="Table_Materials" msprop:Generator_RowEvArgName="Table_MaterialsRowChangeEvent">
+        <xs:element name="Table_Materials" msprop:Generator_TableClassName="Table_MaterialsDataTable" msprop:Generator_TableVarName="tableTable_Materials" msprop:Generator_TablePropName="Table_Materials" msprop:Generator_RowDeletingName="Table_MaterialsRowDeleting" msprop:Generator_RowChangingName="Table_MaterialsRowChanging" msprop:Generator_RowEvHandlerName="Table_MaterialsRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_MaterialsRowDeleted" msprop:Generator_UserTableName="Table_Materials" msprop:Generator_RowChangedName="Table_MaterialsRowChanged" msprop:Generator_RowEvArgName="Table_MaterialsRowChangeEvent" msprop:Generator_RowClassName="Table_MaterialsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -1234,7 +1161,7 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Table_MeasureUnits" msprop:Generator_TableClassName="Table_MeasureUnitsDataTable" msprop:Generator_TableVarName="tableTable_MeasureUnits" msprop:Generator_RowChangedName="Table_MeasureUnitsRowChanged" msprop:Generator_TablePropName="Table_MeasureUnits" msprop:Generator_RowDeletingName="Table_MeasureUnitsRowDeleting" msprop:Generator_RowChangingName="Table_MeasureUnitsRowChanging" msprop:Generator_RowEvHandlerName="Table_MeasureUnitsRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_MeasureUnitsRowDeleted" msprop:Generator_RowClassName="Table_MeasureUnitsRow" msprop:Generator_UserTableName="Table_MeasureUnits" msprop:Generator_RowEvArgName="Table_MeasureUnitsRowChangeEvent">
+        <xs:element name="Table_MeasureUnits" msprop:Generator_TableClassName="Table_MeasureUnitsDataTable" msprop:Generator_TableVarName="tableTable_MeasureUnits" msprop:Generator_TablePropName="Table_MeasureUnits" msprop:Generator_RowDeletingName="Table_MeasureUnitsRowDeleting" msprop:Generator_RowChangingName="Table_MeasureUnitsRowChanging" msprop:Generator_RowEvHandlerName="Table_MeasureUnitsRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_MeasureUnitsRowDeleted" msprop:Generator_UserTableName="Table_MeasureUnits" msprop:Generator_RowChangedName="Table_MeasureUnitsRowChanged" msprop:Generator_RowEvArgName="Table_MeasureUnitsRowChangeEvent" msprop:Generator_RowClassName="Table_MeasureUnitsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -1248,7 +1175,7 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Table_MoneyFlow" msprop:Generator_TableClassName="Table_MoneyFlowDataTable" msprop:Generator_TableVarName="tableTable_MoneyFlow" msprop:Generator_RowChangedName="Table_MoneyFlowRowChanged" msprop:Generator_TablePropName="Table_MoneyFlow" msprop:Generator_RowDeletingName="Table_MoneyFlowRowDeleting" msprop:Generator_RowChangingName="Table_MoneyFlowRowChanging" msprop:Generator_RowEvHandlerName="Table_MoneyFlowRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_MoneyFlowRowDeleted" msprop:Generator_RowClassName="Table_MoneyFlowRow" msprop:Generator_UserTableName="Table_MoneyFlow" msprop:Generator_RowEvArgName="Table_MoneyFlowRowChangeEvent">
+        <xs:element name="Table_MoneyFlow" msprop:Generator_TableClassName="Table_MoneyFlowDataTable" msprop:Generator_TableVarName="tableTable_MoneyFlow" msprop:Generator_TablePropName="Table_MoneyFlow" msprop:Generator_RowDeletingName="Table_MoneyFlowRowDeleting" msprop:Generator_RowChangingName="Table_MoneyFlowRowChanging" msprop:Generator_RowEvHandlerName="Table_MoneyFlowRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_MoneyFlowRowDeleted" msprop:Generator_UserTableName="Table_MoneyFlow" msprop:Generator_RowChangedName="Table_MoneyFlowRowChanged" msprop:Generator_RowEvArgName="Table_MoneyFlowRowChangeEvent" msprop:Generator_RowClassName="Table_MoneyFlowRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -1268,7 +1195,7 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Table_ProductionStages" msprop:Generator_TableClassName="Table_ProductionStagesDataTable" msprop:Generator_TableVarName="tableTable_ProductionStages" msprop:Generator_RowChangedName="Table_ProductionStagesRowChanged" msprop:Generator_TablePropName="Table_ProductionStages" msprop:Generator_RowDeletingName="Table_ProductionStagesRowDeleting" msprop:Generator_RowChangingName="Table_ProductionStagesRowChanging" msprop:Generator_RowEvHandlerName="Table_ProductionStagesRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_ProductionStagesRowDeleted" msprop:Generator_RowClassName="Table_ProductionStagesRow" msprop:Generator_UserTableName="Table_ProductionStages" msprop:Generator_RowEvArgName="Table_ProductionStagesRowChangeEvent">
+        <xs:element name="Table_ProductionStages" msprop:Generator_TableClassName="Table_ProductionStagesDataTable" msprop:Generator_TableVarName="tableTable_ProductionStages" msprop:Generator_TablePropName="Table_ProductionStages" msprop:Generator_RowDeletingName="Table_ProductionStagesRowDeleting" msprop:Generator_RowChangingName="Table_ProductionStagesRowChanging" msprop:Generator_RowEvHandlerName="Table_ProductionStagesRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_ProductionStagesRowDeleted" msprop:Generator_UserTableName="Table_ProductionStages" msprop:Generator_RowChangedName="Table_ProductionStagesRowChanged" msprop:Generator_RowEvArgName="Table_ProductionStagesRowChangeEvent" msprop:Generator_RowClassName="Table_ProductionStagesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -1285,7 +1212,7 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Table_Projects" msprop:Generator_TableClassName="Table_ProjectsDataTable" msprop:Generator_TableVarName="tableTable_Projects" msprop:Generator_RowChangedName="Table_ProjectsRowChanged" msprop:Generator_TablePropName="Table_Projects" msprop:Generator_RowDeletingName="Table_ProjectsRowDeleting" msprop:Generator_RowChangingName="Table_ProjectsRowChanging" msprop:Generator_RowEvHandlerName="Table_ProjectsRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_ProjectsRowDeleted" msprop:Generator_RowClassName="Table_ProjectsRow" msprop:Generator_UserTableName="Table_Projects" msprop:Generator_RowEvArgName="Table_ProjectsRowChangeEvent">
+        <xs:element name="Table_Projects" msprop:Generator_TableClassName="Table_ProjectsDataTable" msprop:Generator_TableVarName="tableTable_Projects" msprop:Generator_TablePropName="Table_Projects" msprop:Generator_RowDeletingName="Table_ProjectsRowDeleting" msprop:Generator_RowChangingName="Table_ProjectsRowChanging" msprop:Generator_RowEvHandlerName="Table_ProjectsRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_ProjectsRowDeleted" msprop:Generator_UserTableName="Table_Projects" msprop:Generator_RowChangedName="Table_ProjectsRowChanged" msprop:Generator_RowEvArgName="Table_ProjectsRowChangeEvent" msprop:Generator_RowClassName="Table_ProjectsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -1312,7 +1239,7 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Table_ProjectStatuses" msprop:Generator_TableClassName="Table_ProjectStatusesDataTable" msprop:Generator_TableVarName="tableTable_ProjectStatuses" msprop:Generator_RowChangedName="Table_ProjectStatusesRowChanged" msprop:Generator_TablePropName="Table_ProjectStatuses" msprop:Generator_RowDeletingName="Table_ProjectStatusesRowDeleting" msprop:Generator_RowChangingName="Table_ProjectStatusesRowChanging" msprop:Generator_RowEvHandlerName="Table_ProjectStatusesRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_ProjectStatusesRowDeleted" msprop:Generator_RowClassName="Table_ProjectStatusesRow" msprop:Generator_UserTableName="Table_ProjectStatuses" msprop:Generator_RowEvArgName="Table_ProjectStatusesRowChangeEvent">
+        <xs:element name="Table_ProjectStatuses" msprop:Generator_TableClassName="Table_ProjectStatusesDataTable" msprop:Generator_TableVarName="tableTable_ProjectStatuses" msprop:Generator_TablePropName="Table_ProjectStatuses" msprop:Generator_RowDeletingName="Table_ProjectStatusesRowDeleting" msprop:Generator_RowChangingName="Table_ProjectStatusesRowChanging" msprop:Generator_RowEvHandlerName="Table_ProjectStatusesRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_ProjectStatusesRowDeleted" msprop:Generator_UserTableName="Table_ProjectStatuses" msprop:Generator_RowChangedName="Table_ProjectStatusesRowChanged" msprop:Generator_RowEvArgName="Table_ProjectStatusesRowChangeEvent" msprop:Generator_RowClassName="Table_ProjectStatusesRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -1326,7 +1253,7 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Table_Sections" msprop:Generator_TableClassName="Table_SectionsDataTable" msprop:Generator_TableVarName="tableTable_Sections" msprop:Generator_RowChangedName="Table_SectionsRowChanged" msprop:Generator_TablePropName="Table_Sections" msprop:Generator_RowDeletingName="Table_SectionsRowDeleting" msprop:Generator_RowChangingName="Table_SectionsRowChanging" msprop:Generator_RowEvHandlerName="Table_SectionsRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_SectionsRowDeleted" msprop:Generator_RowClassName="Table_SectionsRow" msprop:Generator_UserTableName="Table_Sections" msprop:Generator_RowEvArgName="Table_SectionsRowChangeEvent">
+        <xs:element name="Table_Sections" msprop:Generator_TableClassName="Table_SectionsDataTable" msprop:Generator_TableVarName="tableTable_Sections" msprop:Generator_TablePropName="Table_Sections" msprop:Generator_RowDeletingName="Table_SectionsRowDeleting" msprop:Generator_RowChangingName="Table_SectionsRowChanging" msprop:Generator_RowEvHandlerName="Table_SectionsRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_SectionsRowDeleted" msprop:Generator_UserTableName="Table_Sections" msprop:Generator_RowChangedName="Table_SectionsRowChanged" msprop:Generator_RowEvArgName="Table_SectionsRowChangeEvent" msprop:Generator_RowClassName="Table_SectionsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -1340,7 +1267,7 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Table_TEOMaterials" msprop:Generator_TableClassName="Table_TEOMaterialsDataTable" msprop:Generator_TableVarName="tableTable_TEOMaterials" msprop:Generator_RowChangedName="Table_TEOMaterialsRowChanged" msprop:Generator_TablePropName="Table_TEOMaterials" msprop:Generator_RowDeletingName="Table_TEOMaterialsRowDeleting" msprop:Generator_RowChangingName="Table_TEOMaterialsRowChanging" msprop:Generator_RowEvHandlerName="Table_TEOMaterialsRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_TEOMaterialsRowDeleted" msprop:Generator_RowClassName="Table_TEOMaterialsRow" msprop:Generator_UserTableName="Table_TEOMaterials" msprop:Generator_RowEvArgName="Table_TEOMaterialsRowChangeEvent">
+        <xs:element name="Table_TEOMaterials" msprop:Generator_TableClassName="Table_TEOMaterialsDataTable" msprop:Generator_TableVarName="tableTable_TEOMaterials" msprop:Generator_TablePropName="Table_TEOMaterials" msprop:Generator_RowDeletingName="Table_TEOMaterialsRowDeleting" msprop:Generator_RowChangingName="Table_TEOMaterialsRowChanging" msprop:Generator_RowEvHandlerName="Table_TEOMaterialsRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_TEOMaterialsRowDeleted" msprop:Generator_UserTableName="Table_TEOMaterials" msprop:Generator_RowChangedName="Table_TEOMaterialsRowChanged" msprop:Generator_RowEvArgName="Table_TEOMaterialsRowChangeEvent" msprop:Generator_RowClassName="Table_TEOMaterialsRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -1352,7 +1279,7 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="Table_Users" msprop:Generator_TableClassName="Table_UsersDataTable" msprop:Generator_TableVarName="tableTable_Users" msprop:Generator_RowChangedName="Table_UsersRowChanged" msprop:Generator_TablePropName="Table_Users" msprop:Generator_RowDeletingName="Table_UsersRowDeleting" msprop:Generator_RowChangingName="Table_UsersRowChanging" msprop:Generator_RowEvHandlerName="Table_UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_UsersRowDeleted" msprop:Generator_RowClassName="Table_UsersRow" msprop:Generator_UserTableName="Table_Users" msprop:Generator_RowEvArgName="Table_UsersRowChangeEvent">
+        <xs:element name="Table_Users" msprop:Generator_TableClassName="Table_UsersDataTable" msprop:Generator_TableVarName="tableTable_Users" msprop:Generator_TablePropName="Table_Users" msprop:Generator_RowDeletingName="Table_UsersRowDeleting" msprop:Generator_RowChangingName="Table_UsersRowChanging" msprop:Generator_RowEvHandlerName="Table_UsersRowChangeEventHandler" msprop:Generator_RowDeletedName="Table_UsersRowDeleted" msprop:Generator_UserTableName="Table_Users" msprop:Generator_RowChangedName="Table_UsersRowChanged" msprop:Generator_RowEvArgName="Table_UsersRowChangeEvent" msprop:Generator_RowClassName="Table_UsersRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
@@ -1373,160 +1300,6 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
               </xs:element>
               <xs:element name="Permission1" msprop:Generator_ColumnVarNameInTable="columnPermission1" msprop:Generator_ColumnPropNameInRow="Permission1" msprop:Generator_ColumnPropNameInTable="Permission1Column" msprop:Generator_UserColumnName="Permission1" type="xs:boolean" />
               <xs:element name="Permission2" msprop:Generator_ColumnVarNameInTable="columnPermission2" msprop:Generator_ColumnPropNameInRow="Permission2" msprop:Generator_ColumnPropNameInTable="Permission2Column" msprop:Generator_UserColumnName="Permission2" type="xs:boolean" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="View_MoneyFlow" msprop:Generator_TableClassName="View_MoneyFlowDataTable" msprop:Generator_TableVarName="tableView_MoneyFlow" msprop:Generator_TablePropName="View_MoneyFlow" msprop:Generator_RowDeletingName="View_MoneyFlowRowDeleting" msprop:Generator_RowChangingName="View_MoneyFlowRowChanging" msprop:Generator_RowEvHandlerName="View_MoneyFlowRowChangeEventHandler" msprop:Generator_RowDeletedName="View_MoneyFlowRowDeleted" msprop:Generator_UserTableName="View_MoneyFlow" msprop:Generator_RowChangedName="View_MoneyFlowRowChanged" msprop:Generator_RowEvArgName="View_MoneyFlowRowChangeEvent" msprop:Generator_RowClassName="View_MoneyFlowRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="Дата" msprop:Generator_ColumnVarNameInTable="columnДата" msprop:Generator_ColumnPropNameInRow="Дата" msprop:Generator_ColumnPropNameInTable="ДатаColumn" msprop:Generator_UserColumnName="Дата" type="xs:dateTime" />
-              <xs:element name="Сумма" msprop:Generator_ColumnVarNameInTable="columnСумма" msprop:Generator_ColumnPropNameInRow="Сумма" msprop:Generator_ColumnPropNameInTable="СуммаColumn" msprop:Generator_UserColumnName="Сумма" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Наличные" msprop:Generator_ColumnVarNameInTable="columnНаличные" msprop:Generator_ColumnPropNameInRow="Наличные" msprop:Generator_ColumnPropNameInTable="НаличныеColumn" msprop:Generator_UserColumnName="Наличные" type="xs:boolean" />
-              <xs:element name="Комментарий" msprop:Generator_ColumnVarNameInTable="columnКомментарий" msprop:Generator_ColumnPropNameInRow="Комментарий" msprop:Generator_ColumnPropNameInTable="КомментарийColumn" msprop:Generator_UserColumnName="Комментарий" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Заказ" msprop:Generator_ColumnVarNameInTable="columnЗаказ" msprop:Generator_ColumnPropNameInRow="Заказ" msprop:Generator_ColumnPropNameInTable="ЗаказColumn" msprop:Generator_UserColumnName="Заказ" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="60" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Материал" msprop:Generator_ColumnVarNameInTable="columnМатериал" msprop:Generator_ColumnPropNameInRow="Материал" msprop:Generator_ColumnPropNameInTable="МатериалColumn" msprop:Generator_UserColumnName="Материал" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Фамилия" msprop:Generator_ColumnVarNameInTable="columnФамилия" msprop:Generator_ColumnPropNameInRow="Фамилия" msprop:Generator_ColumnPropNameInTable="ФамилияColumn" msprop:Generator_UserColumnName="Фамилия" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Имя" msprop:Generator_ColumnVarNameInTable="columnИмя" msprop:Generator_ColumnPropNameInRow="Имя" msprop:Generator_ColumnPropNameInTable="ИмяColumn" msprop:Generator_UserColumnName="Имя" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="ProjectID" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnProjectID" msprop:Generator_ColumnPropNameInRow="ProjectID" msprop:Generator_ColumnPropNameInTable="ProjectIDColumn" msprop:Generator_UserColumnName="ProjectID" type="xs:string" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="View_Projects" msprop:Generator_TableClassName="View_ProjectsDataTable" msprop:Generator_TableVarName="tableView_Projects" msprop:Generator_TablePropName="View_Projects" msprop:Generator_RowDeletingName="View_ProjectsRowDeleting" msprop:Generator_RowChangingName="View_ProjectsRowChanging" msprop:Generator_RowEvHandlerName="View_ProjectsRowChangeEventHandler" msprop:Generator_RowDeletedName="View_ProjectsRowDeleted" msprop:Generator_UserTableName="View_Projects" msprop:Generator_RowChangedName="View_ProjectsRowChanged" msprop:Generator_RowEvArgName="View_ProjectsRowChangeEvent" msprop:Generator_RowClassName="View_ProjectsRow">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="id" msdata:DataType="System.Guid, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:string" />
-              <xs:element name="Название" msprop:Generator_ColumnVarNameInTable="columnНазвание" msprop:Generator_ColumnPropNameInRow="Название" msprop:Generator_ColumnPropNameInTable="НазваниеColumn" msprop:Generator_UserColumnName="Название">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="60" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Создан" msprop:Generator_ColumnVarNameInTable="columnСоздан" msprop:Generator_ColumnPropNameInRow="Создан" msprop:Generator_ColumnPropNameInTable="СозданColumn" msprop:Generator_UserColumnName="Создан" type="xs:dateTime" />
-              <xs:element name="Маржа" msprop:Generator_ColumnVarNameInTable="columnМаржа" msprop:Generator_ColumnPropNameInRow="Маржа" msprop:Generator_ColumnPropNameInTable="МаржаColumn" msprop:Generator_UserColumnName="Маржа" type="xs:decimal" />
-              <xs:element name="Сумма" msprop:Generator_ColumnVarNameInTable="columnСумма" msprop:Generator_ColumnPropNameInRow="Сумма" msprop:Generator_ColumnPropNameInTable="СуммаColumn" msprop:Generator_UserColumnName="Сумма" type="xs:decimal" minOccurs="0" />
-              <xs:element name="Комментарий" msprop:Generator_ColumnVarNameInTable="columnКомментарий" msprop:Generator_ColumnPropNameInRow="Комментарий" msprop:Generator_ColumnPropNameInTable="КомментарийColumn" msprop:Generator_UserColumnName="Комментарий" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Заказчик" msprop:Generator_ColumnVarNameInTable="columnЗаказчик" msprop:Generator_ColumnPropNameInRow="Заказчик" msprop:Generator_ColumnPropNameInTable="ЗаказчикColumn" msprop:Generator_UserColumnName="Заказчик">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Статус" msprop:Generator_ColumnVarNameInTable="columnСтатус" msprop:Generator_ColumnPropNameInRow="Статус" msprop:Generator_ColumnPropNameInTable="СтатусColumn" msprop:Generator_UserColumnName="Статус">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
-        <xs:element name="View_Employees" msprop:Generator_TableClassName="View_EmployeesDataTable" msprop:Generator_TableVarName="tableView_Employees" msprop:Generator_RowChangedName="View_EmployeesRowChanged" msprop:Generator_TablePropName="View_Employees" msprop:Generator_RowDeletingName="View_EmployeesRowDeleting" msprop:Generator_RowChangingName="View_EmployeesRowChanging" msprop:Generator_RowEvHandlerName="View_EmployeesRowChangeEventHandler" msprop:Generator_RowDeletedName="View_EmployeesRowDeleted" msprop:Generator_RowClassName="View_EmployeesRow" msprop:Generator_UserTableName="View_Employees" msprop:Generator_RowEvArgName="View_EmployeesRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="MiddleName" msprop:Generator_ColumnVarNameInTable="columnMiddleName" msprop:Generator_ColumnPropNameInRow="MiddleName" msprop:Generator_ColumnPropNameInTable="MiddleNameColumn" msprop:Generator_UserColumnName="MiddleName" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Phones" msprop:Generator_ColumnVarNameInTable="columnPhones" msprop:Generator_ColumnPropNameInRow="Phones" msprop:Generator_ColumnPropNameInTable="PhonesColumn" msprop:Generator_UserColumnName="Phones" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Email" msprop:Generator_ColumnVarNameInTable="columnEmail" msprop:Generator_ColumnPropNameInRow="Email" msprop:Generator_ColumnPropNameInTable="EmailColumn" msprop:Generator_UserColumnName="Email" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Address" msprop:Generator_ColumnVarNameInTable="columnAddress" msprop:Generator_ColumnPropNameInRow="Address" msprop:Generator_ColumnPropNameInTable="AddressColumn" msprop:Generator_UserColumnName="Address" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="200" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Comment" msprop:Generator_ColumnVarNameInTable="columnComment" msprop:Generator_ColumnPropNameInRow="Comment" msprop:Generator_ColumnPropNameInTable="CommentColumn" msprop:Generator_UserColumnName="Comment" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="100" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Num" msprop:Generator_ColumnVarNameInTable="columnNum" msprop:Generator_ColumnPropNameInRow="Num" msprop:Generator_ColumnPropNameInTable="NumColumn" msprop:Generator_UserColumnName="Num" type="xs:int" />
-              <xs:element name="Name" msprop:Generator_ColumnVarNameInTable="columnName" msprop:Generator_ColumnPropNameInRow="Name" msprop:Generator_ColumnPropNameInTable="NameColumn" msprop:Generator_UserColumnName="Name">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="Date" msprop:Generator_ColumnVarNameInTable="columnDate" msprop:Generator_ColumnPropNameInRow="Date" msprop:Generator_ColumnPropNameInTable="DateColumn" msprop:Generator_UserColumnName="Date" type="xs:dateTime" />
-              <xs:element name="Expr1" msprop:Generator_ColumnVarNameInTable="columnExpr1" msprop:Generator_ColumnPropNameInRow="Expr1" msprop:Generator_ColumnPropNameInTable="Expr1Column" msprop:Generator_UserColumnName="Expr1">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -1588,29 +1361,24 @@ SELECT id, Employee, Login, Password, Permission1, Permission2 FROM Table_Users 
       <xs:selector xpath=".//mstns:Table_Users" />
       <xs:field xpath="mstns:id" />
     </xs:unique>
-    <xs:unique name="View_Projects_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:View_Projects" />
-      <xs:field xpath="mstns:id" />
-    </xs:unique>
   </xs:element>
   <xs:annotation>
     <xs:appinfo>
-      <msdata:Relationship name="FK_Table_Companies_Table_CompanyTypes" msdata:parent="Table_CompanyTypes" msdata:child="Table_Companies" msdata:parentkey="id" msdata:childkey="CompanyTypeID" msprop:Generator_UserChildTable="Table_Companies" msprop:Generator_ChildPropName="GetTable_CompaniesRows" msprop:Generator_UserRelationName="FK_Table_Companies_Table_CompanyTypes" msprop:Generator_ParentPropName="Table_CompanyTypesRow" msprop:Generator_RelationVarName="relationFK_Table_Companies_Table_CompanyTypes" msprop:Generator_UserParentTable="Table_CompanyTypes" />
-      <msdata:Relationship name="FK_Table_Employees_Table_Companies" msdata:parent="Table_Companies" msdata:child="Table_Employees" msdata:parentkey="id" msdata:childkey="CompanyID" msprop:Generator_UserChildTable="Table_Employees" msprop:Generator_ChildPropName="GetTable_EmployeesRows" msprop:Generator_UserRelationName="FK_Table_Employees_Table_Companies" msprop:Generator_RelationVarName="relationFK_Table_Employees_Table_Companies" msprop:Generator_UserParentTable="Table_Companies" msprop:Generator_ParentPropName="Table_CompaniesRow" />
-      <msdata:Relationship name="FK_Table_History_Table_Users" msdata:parent="Table_Users" msdata:child="Table_History" msdata:parentkey="id" msdata:childkey="UserID" msprop:Generator_UserChildTable="Table_History" msprop:Generator_ChildPropName="GetTable_HistoryRows" msprop:Generator_UserRelationName="FK_Table_History_Table_Users" msprop:Generator_ParentPropName="Table_UsersRow" msprop:Generator_RelationVarName="relationFK_Table_History_Table_Users" msprop:Generator_UserParentTable="Table_Users" />
-      <msdata:Relationship name="FK_Table_Materials_Table_MaterialGroups" msdata:parent="Table_MaterialGroups" msdata:child="Table_Materials" msdata:parentkey="id" msdata:childkey="GroupID" msprop:Generator_UserChildTable="Table_Materials" msprop:Generator_ChildPropName="GetTable_MaterialsRows" msprop:Generator_UserRelationName="FK_Table_Materials_Table_MaterialGroups" msprop:Generator_RelationVarName="relationFK_Table_Materials_Table_MaterialGroups" msprop:Generator_UserParentTable="Table_MaterialGroups" msprop:Generator_ParentPropName="Table_MaterialGroupsRow" />
-      <msdata:Relationship name="FK_Table_Materials_Table_MeasureUnits" msdata:parent="Table_MeasureUnits" msdata:child="Table_Materials" msdata:parentkey="id" msdata:childkey="MeasureUnitID" msprop:Generator_UserChildTable="Table_Materials" msprop:Generator_ChildPropName="GetTable_MaterialsRows" msprop:Generator_UserRelationName="FK_Table_Materials_Table_MeasureUnits" msprop:Generator_ParentPropName="Table_MeasureUnitsRow" msprop:Generator_RelationVarName="relationFK_Table_Materials_Table_MeasureUnits" msprop:Generator_UserParentTable="Table_MeasureUnits" />
-      <msdata:Relationship name="FK_Table_Materials_Table_Sections" msdata:parent="Table_Sections" msdata:child="Table_Materials" msdata:parentkey="id" msdata:childkey="SectionID" msprop:Generator_UserChildTable="Table_Materials" msprop:Generator_ChildPropName="GetTable_MaterialsRows" msprop:Generator_UserRelationName="FK_Table_Materials_Table_Sections" msprop:Generator_ParentPropName="Table_SectionsRow" msprop:Generator_RelationVarName="relationFK_Table_Materials_Table_Sections" msprop:Generator_UserParentTable="Table_Sections" />
-      <msdata:Relationship name="FK_Table_MoneyMoves_Table_Employees" msdata:parent="Table_Employees" msdata:child="Table_MoneyFlow" msdata:parentkey="id" msdata:childkey="EmployeeID" msprop:Generator_UserChildTable="Table_MoneyFlow" msprop:Generator_ChildPropName="GetTable_MoneyFlowRows" msprop:Generator_UserRelationName="FK_Table_MoneyMoves_Table_Employees" msprop:Generator_RelationVarName="relationFK_Table_MoneyMoves_Table_Employees" msprop:Generator_UserParentTable="Table_Employees" msprop:Generator_ParentPropName="Table_EmployeesRow" />
-      <msdata:Relationship name="FK_Table_MoneyMoves_Table_Materials" msdata:parent="Table_Materials" msdata:child="Table_MoneyFlow" msdata:parentkey="id" msdata:childkey="MaterialID" msprop:Generator_UserChildTable="Table_MoneyFlow" msprop:Generator_ChildPropName="GetTable_MoneyFlowRows" msprop:Generator_UserRelationName="FK_Table_MoneyMoves_Table_Materials" msprop:Generator_RelationVarName="relationFK_Table_MoneyMoves_Table_Materials" msprop:Generator_UserParentTable="Table_Materials" msprop:Generator_ParentPropName="Table_MaterialsRow" />
-      <msdata:Relationship name="FK_Table_MoneyMoves_Table_Projects" msdata:parent="Table_Projects" msdata:child="Table_MoneyFlow" msdata:parentkey="id" msdata:childkey="ProjectID" msprop:Generator_UserChildTable="Table_MoneyFlow" msprop:Generator_ChildPropName="GetTable_MoneyFlowRows" msprop:Generator_UserRelationName="FK_Table_MoneyMoves_Table_Projects" msprop:Generator_ParentPropName="Table_ProjectsRow" msprop:Generator_RelationVarName="relationFK_Table_MoneyMoves_Table_Projects" msprop:Generator_UserParentTable="Table_Projects" />
-      <msdata:Relationship name="FK_Table_ProductionStages_Table_Projects" msdata:parent="Table_Projects" msdata:child="Table_ProductionStages" msdata:parentkey="id" msdata:childkey="ProjectID" msprop:Generator_UserChildTable="Table_ProductionStages" msprop:Generator_ChildPropName="GetTable_ProductionStagesRows" msprop:Generator_UserRelationName="FK_Table_ProductionStages_Table_Projects" msprop:Generator_ParentPropName="Table_ProjectsRow" msprop:Generator_RelationVarName="relationFK_Table_ProductionStages_Table_Projects" msprop:Generator_UserParentTable="Table_Projects" />
-      <msdata:Relationship name="FK_Table_Projects_Table_Companies" msdata:parent="Table_Companies" msdata:child="Table_Projects" msdata:parentkey="id" msdata:childkey="CompanyID" msprop:Generator_UserChildTable="Table_Projects" msprop:Generator_ChildPropName="GetTable_ProjectsRows" msprop:Generator_UserRelationName="FK_Table_Projects_Table_Companies" msprop:Generator_RelationVarName="relationFK_Table_Projects_Table_Companies" msprop:Generator_UserParentTable="Table_Companies" msprop:Generator_ParentPropName="Table_CompaniesRow" />
-      <msdata:Relationship name="FK_Table_Projects_Table_ProjectStatuses" msdata:parent="Table_ProjectStatuses" msdata:child="Table_Projects" msdata:parentkey="id" msdata:childkey="ProjectStatusID" msprop:Generator_UserChildTable="Table_Projects" msprop:Generator_ChildPropName="GetTable_ProjectsRows" msprop:Generator_UserRelationName="FK_Table_Projects_Table_ProjectStatuses" msprop:Generator_ParentPropName="Table_ProjectStatusesRow" msprop:Generator_RelationVarName="relationFK_Table_Projects_Table_ProjectStatuses" msprop:Generator_UserParentTable="Table_ProjectStatuses" />
-      <msdata:Relationship name="FK_Table_TEOMaterials_Table_Companies" msdata:parent="Table_Companies" msdata:child="Table_TEOMaterials" msdata:parentkey="id" msdata:childkey="SupplierID" msprop:Generator_UserChildTable="Table_TEOMaterials" msprop:Generator_ChildPropName="GetTable_TEOMaterialsRows" msprop:Generator_UserRelationName="FK_Table_TEOMaterials_Table_Companies" msprop:Generator_RelationVarName="relationFK_Table_TEOMaterials_Table_Companies" msprop:Generator_UserParentTable="Table_Companies" msprop:Generator_ParentPropName="Table_CompaniesRow" />
-      <msdata:Relationship name="FK_Table_TEOMaterials_Table_Materials" msdata:parent="Table_Materials" msdata:child="Table_TEOMaterials" msdata:parentkey="id" msdata:childkey="MaterialID" msprop:Generator_UserChildTable="Table_TEOMaterials" msprop:Generator_ChildPropName="GetTable_TEOMaterialsRows" msprop:Generator_UserRelationName="FK_Table_TEOMaterials_Table_Materials" msprop:Generator_RelationVarName="relationFK_Table_TEOMaterials_Table_Materials" msprop:Generator_UserParentTable="Table_Materials" msprop:Generator_ParentPropName="Table_MaterialsRow" />
-      <msdata:Relationship name="FK_Table_TEOMaterials_Table_Projects" msdata:parent="Table_Projects" msdata:child="Table_TEOMaterials" msdata:parentkey="id" msdata:childkey="ProjectID" msprop:Generator_UserChildTable="Table_TEOMaterials" msprop:Generator_ChildPropName="GetTable_TEOMaterialsRows" msprop:Generator_UserRelationName="FK_Table_TEOMaterials_Table_Projects" msprop:Generator_RelationVarName="relationFK_Table_TEOMaterials_Table_Projects" msprop:Generator_UserParentTable="Table_Projects" msprop:Generator_ParentPropName="Table_ProjectsRow" />
-      <msdata:Relationship name="View_Projects_View_MoneyFlow" msdata:parent="View_Projects" msdata:child="View_MoneyFlow" msdata:parentkey="id" msdata:childkey="ProjectID" msprop:Generator_UserChildTable="View_MoneyFlow" msprop:Generator_ChildPropName="GetView_MoneyFlowRows" msprop:Generator_UserRelationName="View_Projects_View_MoneyFlow" msprop:Generator_RelationVarName="relationView_Projects_View_MoneyFlow" msprop:Generator_UserParentTable="View_Projects" msprop:Generator_ParentPropName="View_ProjectsRow" />
+      <msdata:Relationship name="FK_Table_Companies_Table_CompanyTypes" msdata:parent="Table_CompanyTypes" msdata:child="Table_Companies" msdata:parentkey="id" msdata:childkey="CompanyTypeID" msprop:Generator_UserChildTable="Table_Companies" msprop:Generator_ChildPropName="GetTable_CompaniesRows" msprop:Generator_UserRelationName="FK_Table_Companies_Table_CompanyTypes" msprop:Generator_RelationVarName="relationFK_Table_Companies_Table_CompanyTypes" msprop:Generator_UserParentTable="Table_CompanyTypes" msprop:Generator_ParentPropName="Table_CompanyTypesRow" />
+      <msdata:Relationship name="FK_Table_Employees_Table_Companies" msdata:parent="Table_Companies" msdata:child="Table_Employees" msdata:parentkey="id" msdata:childkey="CompanyID" msprop:Generator_UserChildTable="Table_Employees" msprop:Generator_ChildPropName="GetTable_EmployeesRows" msprop:Generator_UserRelationName="FK_Table_Employees_Table_Companies" msprop:Generator_ParentPropName="Table_CompaniesRow" msprop:Generator_RelationVarName="relationFK_Table_Employees_Table_Companies" msprop:Generator_UserParentTable="Table_Companies" />
+      <msdata:Relationship name="FK_Table_History_Table_Users" msdata:parent="Table_Users" msdata:child="Table_History" msdata:parentkey="id" msdata:childkey="UserID" msprop:Generator_UserChildTable="Table_History" msprop:Generator_ChildPropName="GetTable_HistoryRows" msprop:Generator_UserRelationName="FK_Table_History_Table_Users" msprop:Generator_RelationVarName="relationFK_Table_History_Table_Users" msprop:Generator_UserParentTable="Table_Users" msprop:Generator_ParentPropName="Table_UsersRow" />
+      <msdata:Relationship name="FK_Table_Materials_Table_MaterialGroups" msdata:parent="Table_MaterialGroups" msdata:child="Table_Materials" msdata:parentkey="id" msdata:childkey="GroupID" msprop:Generator_UserChildTable="Table_Materials" msprop:Generator_ChildPropName="GetTable_MaterialsRows" msprop:Generator_UserRelationName="FK_Table_Materials_Table_MaterialGroups" msprop:Generator_ParentPropName="Table_MaterialGroupsRow" msprop:Generator_RelationVarName="relationFK_Table_Materials_Table_MaterialGroups" msprop:Generator_UserParentTable="Table_MaterialGroups" />
+      <msdata:Relationship name="FK_Table_Materials_Table_MeasureUnits" msdata:parent="Table_MeasureUnits" msdata:child="Table_Materials" msdata:parentkey="id" msdata:childkey="MeasureUnitID" msprop:Generator_UserChildTable="Table_Materials" msprop:Generator_ChildPropName="GetTable_MaterialsRows" msprop:Generator_UserRelationName="FK_Table_Materials_Table_MeasureUnits" msprop:Generator_RelationVarName="relationFK_Table_Materials_Table_MeasureUnits" msprop:Generator_UserParentTable="Table_MeasureUnits" msprop:Generator_ParentPropName="Table_MeasureUnitsRow" />
+      <msdata:Relationship name="FK_Table_Materials_Table_Sections" msdata:parent="Table_Sections" msdata:child="Table_Materials" msdata:parentkey="id" msdata:childkey="SectionID" msprop:Generator_UserChildTable="Table_Materials" msprop:Generator_ChildPropName="GetTable_MaterialsRows" msprop:Generator_UserRelationName="FK_Table_Materials_Table_Sections" msprop:Generator_RelationVarName="relationFK_Table_Materials_Table_Sections" msprop:Generator_UserParentTable="Table_Sections" msprop:Generator_ParentPropName="Table_SectionsRow" />
+      <msdata:Relationship name="FK_Table_MoneyMoves_Table_Employees" msdata:parent="Table_Employees" msdata:child="Table_MoneyFlow" msdata:parentkey="id" msdata:childkey="EmployeeID" msprop:Generator_UserChildTable="Table_MoneyFlow" msprop:Generator_ChildPropName="GetTable_MoneyFlowRows" msprop:Generator_UserRelationName="FK_Table_MoneyMoves_Table_Employees" msprop:Generator_ParentPropName="Table_EmployeesRow" msprop:Generator_RelationVarName="relationFK_Table_MoneyMoves_Table_Employees" msprop:Generator_UserParentTable="Table_Employees" />
+      <msdata:Relationship name="FK_Table_MoneyMoves_Table_Materials" msdata:parent="Table_Materials" msdata:child="Table_MoneyFlow" msdata:parentkey="id" msdata:childkey="MaterialID" msprop:Generator_UserChildTable="Table_MoneyFlow" msprop:Generator_ChildPropName="GetTable_MoneyFlowRows" msprop:Generator_UserRelationName="FK_Table_MoneyMoves_Table_Materials" msprop:Generator_ParentPropName="Table_MaterialsRow" msprop:Generator_RelationVarName="relationFK_Table_MoneyMoves_Table_Materials" msprop:Generator_UserParentTable="Table_Materials" />
+      <msdata:Relationship name="FK_Table_MoneyMoves_Table_Projects" msdata:parent="Table_Projects" msdata:child="Table_MoneyFlow" msdata:parentkey="id" msdata:childkey="ProjectID" msprop:Generator_UserChildTable="Table_MoneyFlow" msprop:Generator_ChildPropName="GetTable_MoneyFlowRows" msprop:Generator_UserRelationName="FK_Table_MoneyMoves_Table_Projects" msprop:Generator_RelationVarName="relationFK_Table_MoneyMoves_Table_Projects" msprop:Generator_UserParentTable="Table_Projects" msprop:Generator_ParentPropName="Table_ProjectsRow" />
+      <msdata:Relationship name="FK_Table_ProductionStages_Table_Projects" msdata:parent="Table_Projects" msdata:child="Table_ProductionStages" msdata:parentkey="id" msdata:childkey="ProjectID" msprop:Generator_UserChildTable="Table_ProductionStages" msprop:Generator_ChildPropName="GetTable_ProductionStagesRows" msprop:Generator_UserRelationName="FK_Table_ProductionStages_Table_Projects" msprop:Generator_RelationVarName="relationFK_Table_ProductionStages_Table_Projects" msprop:Generator_UserParentTable="Table_Projects" msprop:Generator_ParentPropName="Table_ProjectsRow" />
+      <msdata:Relationship name="FK_Table_Projects_Table_Companies" msdata:parent="Table_Companies" msdata:child="Table_Projects" msdata:parentkey="id" msdata:childkey="CompanyID" msprop:Generator_UserChildTable="Table_Projects" msprop:Generator_ChildPropName="GetTable_ProjectsRows" msprop:Generator_UserRelationName="FK_Table_Projects_Table_Companies" msprop:Generator_ParentPropName="Table_CompaniesRow" msprop:Generator_RelationVarName="relationFK_Table_Projects_Table_Companies" msprop:Generator_UserParentTable="Table_Companies" />
+      <msdata:Relationship name="FK_Table_Projects_Table_ProjectStatuses" msdata:parent="Table_ProjectStatuses" msdata:child="Table_Projects" msdata:parentkey="id" msdata:childkey="ProjectStatusID" msprop:Generator_UserChildTable="Table_Projects" msprop:Generator_ChildPropName="GetTable_ProjectsRows" msprop:Generator_UserRelationName="FK_Table_Projects_Table_ProjectStatuses" msprop:Generator_RelationVarName="relationFK_Table_Projects_Table_ProjectStatuses" msprop:Generator_UserParentTable="Table_ProjectStatuses" msprop:Generator_ParentPropName="Table_ProjectStatusesRow" />
+      <msdata:Relationship name="FK_Table_TEOMaterials_Table_Companies" msdata:parent="Table_Companies" msdata:child="Table_TEOMaterials" msdata:parentkey="id" msdata:childkey="SupplierID" msprop:Generator_UserChildTable="Table_TEOMaterials" msprop:Generator_ChildPropName="GetTable_TEOMaterialsRows" msprop:Generator_UserRelationName="FK_Table_TEOMaterials_Table_Companies" msprop:Generator_ParentPropName="Table_CompaniesRow" msprop:Generator_RelationVarName="relationFK_Table_TEOMaterials_Table_Companies" msprop:Generator_UserParentTable="Table_Companies" />
+      <msdata:Relationship name="FK_Table_TEOMaterials_Table_Materials" msdata:parent="Table_Materials" msdata:child="Table_TEOMaterials" msdata:parentkey="id" msdata:childkey="MaterialID" msprop:Generator_UserChildTable="Table_TEOMaterials" msprop:Generator_ChildPropName="GetTable_TEOMaterialsRows" msprop:Generator_UserRelationName="FK_Table_TEOMaterials_Table_Materials" msprop:Generator_ParentPropName="Table_MaterialsRow" msprop:Generator_RelationVarName="relationFK_Table_TEOMaterials_Table_Materials" msprop:Generator_UserParentTable="Table_Materials" />
+      <msdata:Relationship name="FK_Table_TEOMaterials_Table_Projects" msdata:parent="Table_Projects" msdata:child="Table_TEOMaterials" msdata:parentkey="id" msdata:childkey="ProjectID" msprop:Generator_UserChildTable="Table_TEOMaterials" msprop:Generator_ChildPropName="GetTable_TEOMaterialsRows" msprop:Generator_UserRelationName="FK_Table_TEOMaterials_Table_Projects" msprop:Generator_ParentPropName="Table_ProjectsRow" msprop:Generator_RelationVarName="relationFK_Table_TEOMaterials_Table_Projects" msprop:Generator_UserParentTable="Table_Projects" />
     </xs:appinfo>
   </xs:annotation>
 </xs:schema>

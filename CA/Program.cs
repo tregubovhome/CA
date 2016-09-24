@@ -17,6 +17,9 @@ namespace CA
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form_Start());
+            //Form_Calculator fc = new Form_Calculator(33);
+            //fc.ShowDialog();
+            //MessageBox.Show(fc.Value.ToString());
         }
     }
 }

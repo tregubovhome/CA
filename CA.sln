@@ -5,16 +5,37 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CA", "CA\CA.csproj", "{8AD34296-EF3D-4C0A-AC38-CB11A277F1A1}"
 EndProject
+Project("{6141683F-8A12-4E36-9623-2EB02B2C2303}") = "Setup_CA", "Setup_CA\Setup_CA.isproj", "{329FB8B6-6F74-43AB-A89E-A9F97874520A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		CD_ROM|Any CPU = CD_ROM|Any CPU
 		Debug|Any CPU = Debug|Any CPU
+		DVD-5|Any CPU = DVD-5|Any CPU
 		Release|Any CPU = Release|Any CPU
+		SingleImage|Any CPU = SingleImage|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8AD34296-EF3D-4C0A-AC38-CB11A277F1A1}.CD_ROM|Any CPU.ActiveCfg = Release|Any CPU
+		{8AD34296-EF3D-4C0A-AC38-CB11A277F1A1}.CD_ROM|Any CPU.Build.0 = Release|Any CPU
 		{8AD34296-EF3D-4C0A-AC38-CB11A277F1A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8AD34296-EF3D-4C0A-AC38-CB11A277F1A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AD34296-EF3D-4C0A-AC38-CB11A277F1A1}.DVD-5|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AD34296-EF3D-4C0A-AC38-CB11A277F1A1}.DVD-5|Any CPU.Build.0 = Debug|Any CPU
 		{8AD34296-EF3D-4C0A-AC38-CB11A277F1A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8AD34296-EF3D-4C0A-AC38-CB11A277F1A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AD34296-EF3D-4C0A-AC38-CB11A277F1A1}.SingleImage|Any CPU.ActiveCfg = Release|Any CPU
+		{8AD34296-EF3D-4C0A-AC38-CB11A277F1A1}.SingleImage|Any CPU.Build.0 = Release|Any CPU
+		{329FB8B6-6F74-43AB-A89E-A9F97874520A}.CD_ROM|Any CPU.ActiveCfg = CD_ROM
+		{329FB8B6-6F74-43AB-A89E-A9F97874520A}.CD_ROM|Any CPU.Build.0 = CD_ROM
+		{329FB8B6-6F74-43AB-A89E-A9F97874520A}.Debug|Any CPU.ActiveCfg = DVD-5
+		{329FB8B6-6F74-43AB-A89E-A9F97874520A}.Debug|Any CPU.Build.0 = DVD-5
+		{329FB8B6-6F74-43AB-A89E-A9F97874520A}.DVD-5|Any CPU.ActiveCfg = DVD-5
+		{329FB8B6-6F74-43AB-A89E-A9F97874520A}.DVD-5|Any CPU.Build.0 = DVD-5
+		{329FB8B6-6F74-43AB-A89E-A9F97874520A}.Release|Any CPU.ActiveCfg = SingleImage
+		{329FB8B6-6F74-43AB-A89E-A9F97874520A}.Release|Any CPU.Build.0 = SingleImage
+		{329FB8B6-6F74-43AB-A89E-A9F97874520A}.SingleImage|Any CPU.ActiveCfg = SingleImage
+		{329FB8B6-6F74-43AB-A89E-A9F97874520A}.SingleImage|Any CPU.Build.0 = SingleImage
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -30,13 +30,16 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_Materials));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.splitContainer2 = new System.Windows.Forms.SplitContainer();
             this.splitContainer3 = new System.Windows.Forms.SplitContainer();
+            this.comboBoxSection = new System.Windows.Forms.ComboBox();
+            this.tableSectionsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.cA_DB_DataSet = new CA.CA_DB_DataSet();
             this.table_MaterialGroupsBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.table_MaterialGroupsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.cA_DB_DataSet = new CA.CA_DB_DataSet();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -54,6 +57,7 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorAddNewItem1 = new System.Windows.Forms.ToolStripButton();
+            this.table_MaterialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem1 = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem1 = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem1 = new System.Windows.Forms.ToolStripButton();
@@ -78,15 +82,13 @@
             this.MaterialMeasureUnitID = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.tableMeasureUnitsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.table_MaterialsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.button_MeasureUnits = new System.Windows.Forms.Button();
             this.button_Refresh = new System.Windows.Forms.Button();
             this.table_MaterialGroupsTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_MaterialGroupsTableAdapter();
             this.tableAdapterManager = new CA.CA_DB_DataSetTableAdapters.TableAdapterManager();
             this.table_MaterialsTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_MaterialsTableAdapter();
             this.table_MeasureUnitsTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_MeasureUnitsTableAdapter();
             this.table_SectionsTableAdapter = new CA.CA_DB_DataSetTableAdapters.Table_SectionsTableAdapter();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.tableSectionsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -99,19 +101,19 @@
             this.splitContainer3.Panel1.SuspendLayout();
             this.splitContainer3.Panel2.SuspendLayout();
             this.splitContainer3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tableSectionsBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cA_DB_DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_MaterialGroupsBindingNavigator)).BeginInit();
             this.table_MaterialGroupsBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_MaterialGroupsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cA_DB_DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_MaterialGroupsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.table_MaterialsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_MaterialsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableSectionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableMaterialGroupsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableMeasureUnitsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.table_MaterialsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableSectionsBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // splitContainer1
@@ -127,9 +129,10 @@
             // 
             // splitContainer1.Panel2
             // 
+            this.splitContainer1.Panel2.Controls.Add(this.button_MeasureUnits);
             this.splitContainer1.Panel2.Controls.Add(this.button_Refresh);
-            this.splitContainer1.Size = new System.Drawing.Size(988, 690);
-            this.splitContainer1.SplitterDistance = 743;
+            this.splitContainer1.Size = new System.Drawing.Size(988, 565);
+            this.splitContainer1.SplitterDistance = 851;
             this.splitContainer1.TabIndex = 0;
             // 
             // splitContainer2
@@ -149,8 +152,8 @@
             this.splitContainer2.Panel2.AutoScroll = true;
             this.splitContainer2.Panel2.Controls.Add(this.bindingNavigator1);
             this.splitContainer2.Panel2.Controls.Add(this.table_MaterialsDataGridView);
-            this.splitContainer2.Size = new System.Drawing.Size(743, 690);
-            this.splitContainer2.SplitterDistance = 223;
+            this.splitContainer2.Size = new System.Drawing.Size(851, 565);
+            this.splitContainer2.SplitterDistance = 182;
             this.splitContainer2.TabIndex = 0;
             // 
             // splitContainer3
@@ -163,15 +166,37 @@
             // splitContainer3.Panel1
             // 
             this.splitContainer3.Panel1.AutoScroll = true;
-            this.splitContainer3.Panel1.Controls.Add(this.table_MaterialGroupsBindingNavigator);
-            this.splitContainer3.Panel1.Controls.Add(this.table_MaterialGroupsDataGridView);
+            this.splitContainer3.Panel1.Controls.Add(this.comboBoxSection);
             // 
             // splitContainer3.Panel2
             // 
-            this.splitContainer3.Panel2.Controls.Add(this.comboBox1);
-            this.splitContainer3.Size = new System.Drawing.Size(743, 223);
-            this.splitContainer3.SplitterDistance = 359;
+            this.splitContainer3.Panel2.Controls.Add(this.table_MaterialGroupsBindingNavigator);
+            this.splitContainer3.Panel2.Controls.Add(this.table_MaterialGroupsDataGridView);
+            this.splitContainer3.Size = new System.Drawing.Size(851, 182);
+            this.splitContainer3.SplitterDistance = 410;
             this.splitContainer3.TabIndex = 0;
+            // 
+            // comboBoxSection
+            // 
+            this.comboBoxSection.DataSource = this.tableSectionsBindingSource1;
+            this.comboBoxSection.DisplayMember = "Name";
+            this.comboBoxSection.FormattingEnabled = true;
+            this.comboBoxSection.Location = new System.Drawing.Point(10, 10);
+            this.comboBoxSection.Name = "comboBoxSection";
+            this.comboBoxSection.Size = new System.Drawing.Size(282, 21);
+            this.comboBoxSection.TabIndex = 0;
+            this.comboBoxSection.ValueMember = "id";
+            this.comboBoxSection.SelectedIndexChanged += new System.EventHandler(this.comboBoxSection_SelectedIndexChanged);
+            // 
+            // tableSectionsBindingSource1
+            // 
+            this.tableSectionsBindingSource1.DataMember = "Table_Sections";
+            this.tableSectionsBindingSource1.DataSource = this.cA_DB_DataSet;
+            // 
+            // cA_DB_DataSet
+            // 
+            this.cA_DB_DataSet.DataSetName = "CA_DB_DataSet";
+            this.cA_DB_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // table_MaterialGroupsBindingNavigator
             // 
@@ -201,7 +226,7 @@
             this.table_MaterialGroupsBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.table_MaterialGroupsBindingNavigator.Name = "table_MaterialGroupsBindingNavigator";
             this.table_MaterialGroupsBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.table_MaterialGroupsBindingNavigator.Size = new System.Drawing.Size(355, 25);
+            this.table_MaterialGroupsBindingNavigator.Size = new System.Drawing.Size(433, 25);
             this.table_MaterialGroupsBindingNavigator.TabIndex = 1;
             this.table_MaterialGroupsBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -219,11 +244,6 @@
             // 
             this.table_MaterialGroupsBindingSource.DataMember = "Table_MaterialGroups";
             this.table_MaterialGroupsBindingSource.DataSource = this.cA_DB_DataSet;
-            // 
-            // cA_DB_DataSet
-            // 
-            this.cA_DB_DataSet.DataSetName = "CA_DB_DataSet";
-            this.cA_DB_DataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // bindingNavigatorCountItem
             // 
@@ -327,14 +347,16 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.table_MaterialGroupsDataGridView.AutoGenerateColumns = false;
+            this.table_MaterialGroupsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.table_MaterialGroupsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table_MaterialGroupsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.GroupID,
             this.dataGridViewTextBoxColumn2});
             this.table_MaterialGroupsDataGridView.DataSource = this.table_MaterialGroupsBindingSource;
-            this.table_MaterialGroupsDataGridView.Location = new System.Drawing.Point(-2, 25);
+            this.table_MaterialGroupsDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.table_MaterialGroupsDataGridView.MultiSelect = false;
             this.table_MaterialGroupsDataGridView.Name = "table_MaterialGroupsDataGridView";
-            this.table_MaterialGroupsDataGridView.Size = new System.Drawing.Size(358, 193);
+            this.table_MaterialGroupsDataGridView.Size = new System.Drawing.Size(432, 152);
             this.table_MaterialGroupsDataGridView.TabIndex = 0;
             this.table_MaterialGroupsDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_MaterialGroupsDataGridView_CellValueChanged);
             this.table_MaterialGroupsDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.table_MaterialGroupsDataGridView_DefaultValuesNeeded);
@@ -345,16 +367,19 @@
             this.GroupID.HeaderText = "id";
             this.GroupID.Name = "GroupID";
             this.GroupID.Visible = false;
+            this.GroupID.Width = 40;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Name";
             this.dataGridViewTextBoxColumn2.HeaderText = "Группа";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.Width = 67;
             // 
             // bindingNavigator1
             // 
             this.bindingNavigator1.AddNewItem = this.bindingNavigatorAddNewItem1;
+            this.bindingNavigator1.BindingSource = this.table_MaterialsBindingSource;
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem1;
             this.bindingNavigator1.CountItemFormat = "из {0}";
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem1;
@@ -378,7 +403,7 @@
             this.bindingNavigator1.MovePreviousItem = this.bindingNavigatorMovePreviousItem1;
             this.bindingNavigator1.Name = "bindingNavigator1";
             this.bindingNavigator1.PositionItem = this.bindingNavigatorPositionItem1;
-            this.bindingNavigator1.Size = new System.Drawing.Size(739, 25);
+            this.bindingNavigator1.Size = new System.Drawing.Size(847, 25);
             this.bindingNavigator1.TabIndex = 1;
             this.bindingNavigator1.Text = "bindingNavigator1";
             // 
@@ -391,6 +416,11 @@
             this.bindingNavigatorAddNewItem1.Size = new System.Drawing.Size(23, 22);
             this.bindingNavigatorAddNewItem1.Text = "Добавить";
             this.bindingNavigatorAddNewItem1.Visible = false;
+            // 
+            // table_MaterialsBindingSource
+            // 
+            this.table_MaterialsBindingSource.DataMember = "FK_Table_Materials_Table_MaterialGroups";
+            this.table_MaterialsBindingSource.DataSource = this.table_MaterialGroupsBindingSource;
             // 
             // bindingNavigatorCountItem1
             // 
@@ -485,6 +515,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.table_MaterialsDataGridView.AutoGenerateColumns = false;
+            this.table_MaterialsDataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.table_MaterialsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.table_MaterialsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.MaterialID,
@@ -497,10 +528,12 @@
             this.MaterialMeasureUnitID,
             this.Price});
             this.table_MaterialsDataGridView.DataSource = this.table_MaterialsBindingSource;
-            this.table_MaterialsDataGridView.Location = new System.Drawing.Point(-2, 28);
+            this.table_MaterialsDataGridView.Location = new System.Drawing.Point(0, 25);
+            this.table_MaterialsDataGridView.MultiSelect = false;
             this.table_MaterialsDataGridView.Name = "table_MaterialsDataGridView";
-            this.table_MaterialsDataGridView.Size = new System.Drawing.Size(740, 430);
+            this.table_MaterialsDataGridView.Size = new System.Drawing.Size(844, 350);
             this.table_MaterialsDataGridView.TabIndex = 0;
+            this.table_MaterialsDataGridView.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.table_MaterialsDataGridView_CellBeginEdit);
             this.table_MaterialsDataGridView.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.table_MaterialsDataGridView_CellValueChanged);
             this.table_MaterialsDataGridView.DefaultValuesNeeded += new System.Windows.Forms.DataGridViewRowEventHandler(this.table_MaterialsDataGridView_DefaultValuesNeeded);
             // 
@@ -510,6 +543,7 @@
             this.MaterialID.HeaderText = "id";
             this.MaterialID.Name = "MaterialID";
             this.MaterialID.Visible = false;
+            this.MaterialID.Width = 40;
             // 
             // MaterialSectionID
             // 
@@ -522,6 +556,7 @@
             this.MaterialSectionID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.MaterialSectionID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.MaterialSectionID.ValueMember = "id";
+            this.MaterialSectionID.Width = 69;
             // 
             // tableSectionsBindingSource
             // 
@@ -539,6 +574,7 @@
             this.MaterialGroupID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.MaterialGroupID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.MaterialGroupID.ValueMember = "id";
+            this.MaterialGroupID.Width = 67;
             // 
             // tableMaterialGroupsBindingSource
             // 
@@ -550,24 +586,28 @@
             this.IsWork.DataPropertyName = "IsWork";
             this.IsWork.HeaderText = "Работы";
             this.IsWork.Name = "IsWork";
+            this.IsWork.Width = 51;
             // 
             // MaterialName
             // 
             this.MaterialName.DataPropertyName = "Name";
             this.MaterialName.HeaderText = "Наименование";
             this.MaterialName.Name = "MaterialName";
+            this.MaterialName.Width = 108;
             // 
             // Matter
             // 
             this.Matter.DataPropertyName = "Matter";
             this.Matter.HeaderText = "Состав (материал)";
             this.Matter.Name = "Matter";
+            this.Matter.Width = 115;
             // 
             // Article
             // 
             this.Article.DataPropertyName = "Article";
             this.Article.HeaderText = "Артикул";
             this.Article.Name = "Article";
+            this.Article.Width = 73;
             // 
             // MaterialMeasureUnitID
             // 
@@ -580,6 +620,7 @@
             this.MaterialMeasureUnitID.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.MaterialMeasureUnitID.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.MaterialMeasureUnitID.ValueMember = "id";
+            this.MaterialMeasureUnitID.Width = 47;
             // 
             // tableMeasureUnitsBindingSource
             // 
@@ -589,20 +630,31 @@
             // Price
             // 
             this.Price.DataPropertyName = "Price";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle1.Format = "C2";
+            dataGridViewCellStyle1.NullValue = null;
+            this.Price.DefaultCellStyle = dataGridViewCellStyle1;
             this.Price.HeaderText = "Актуальная цена";
             this.Price.Name = "Price";
+            this.Price.Width = 108;
             // 
-            // table_MaterialsBindingSource
+            // button_MeasureUnits
             // 
-            this.table_MaterialsBindingSource.DataMember = "FK_Table_Materials_Table_MaterialGroups";
-            this.table_MaterialsBindingSource.DataSource = this.table_MaterialGroupsBindingSource;
+            this.button_MeasureUnits.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.button_MeasureUnits.Location = new System.Drawing.Point(0, 481);
+            this.button_MeasureUnits.Name = "button_MeasureUnits";
+            this.button_MeasureUnits.Size = new System.Drawing.Size(129, 40);
+            this.button_MeasureUnits.TabIndex = 11;
+            this.button_MeasureUnits.Text = "Единицы измерения";
+            this.button_MeasureUnits.UseVisualStyleBackColor = true;
+            this.button_MeasureUnits.Click += new System.EventHandler(this.button_MeasureUnits_Click);
             // 
             // button_Refresh
             // 
             this.button_Refresh.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.button_Refresh.Location = new System.Drawing.Point(0, 646);
+            this.button_Refresh.Location = new System.Drawing.Point(0, 521);
             this.button_Refresh.Name = "button_Refresh";
-            this.button_Refresh.Size = new System.Drawing.Size(237, 40);
+            this.button_Refresh.Size = new System.Drawing.Size(129, 40);
             this.button_Refresh.TabIndex = 10;
             this.button_Refresh.Text = "Обновить";
             this.button_Refresh.UseVisualStyleBackColor = true;
@@ -643,27 +695,11 @@
             // 
             this.table_SectionsTableAdapter.ClearBeforeFill = true;
             // 
-            // comboBox1
-            // 
-            this.comboBox1.DataSource = this.tableSectionsBindingSource1;
-            this.comboBox1.DisplayMember = "Name";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(49, 69);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(192, 21);
-            this.comboBox1.TabIndex = 0;
-            this.comboBox1.ValueMember = "id";
-            // 
-            // tableSectionsBindingSource1
-            // 
-            this.tableSectionsBindingSource1.DataMember = "Table_Sections";
-            this.tableSectionsBindingSource1.DataSource = this.cA_DB_DataSet;
-            // 
             // Form_Materials
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(988, 690);
+            this.ClientSize = new System.Drawing.Size(988, 565);
             this.Controls.Add(this.splitContainer1);
             this.Name = "Form_Materials";
             this.Text = "Материалы";
@@ -678,25 +714,25 @@
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer2)).EndInit();
             this.splitContainer2.ResumeLayout(false);
             this.splitContainer3.Panel1.ResumeLayout(false);
-            this.splitContainer3.Panel1.PerformLayout();
             this.splitContainer3.Panel2.ResumeLayout(false);
+            this.splitContainer3.Panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer3)).EndInit();
             this.splitContainer3.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.tableSectionsBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.cA_DB_DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_MaterialGroupsBindingNavigator)).EndInit();
             this.table_MaterialGroupsBindingNavigator.ResumeLayout(false);
             this.table_MaterialGroupsBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.table_MaterialGroupsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.cA_DB_DataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_MaterialGroupsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.table_MaterialsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.table_MaterialsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableSectionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableMaterialGroupsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tableMeasureUnitsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.table_MaterialsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tableSectionsBindingSource1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -749,6 +785,9 @@
         private System.Windows.Forms.Button button_Refresh;
         private System.Windows.Forms.ToolStripButton toolStripButtonDelete;
         private System.Windows.Forms.ToolStripButton toolStripButtonDeleteGroup;
+        private System.Windows.Forms.ComboBox comboBoxSection;
+        private System.Windows.Forms.BindingSource tableSectionsBindingSource1;
+        private System.Windows.Forms.Button button_MeasureUnits;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaterialID;
         private System.Windows.Forms.DataGridViewComboBoxColumn MaterialSectionID;
         private System.Windows.Forms.DataGridViewComboBoxColumn MaterialGroupID;
@@ -758,7 +797,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Article;
         private System.Windows.Forms.DataGridViewComboBoxColumn MaterialMeasureUnitID;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.BindingSource tableSectionsBindingSource1;
     }
 }

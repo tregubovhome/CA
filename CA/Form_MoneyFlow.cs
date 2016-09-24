@@ -36,13 +36,15 @@ namespace CA
             e.Row.Cells["Date"].Value = DateTime.Today;
             e.Row.Cells["IsCash"].Value = true;
         }
-        //private bool IsLoaded = false;
+        private void table_MoneyFlowDataGridView_CellBeginEdit(object sender, DataGridViewCellCancelEventArgs e)
+        {
+            BS_SpecialEdit(sender as DataGridView, e);
+        }
         private void table_MoneyFlowDataGridView_CellValueChanged(object sender, DataGridViewCellEventArgs e)
         {
             //добавить проверку корректности внесенных данных
             if (e.RowIndex == -1) return;
             if (e.RowIndex == (sender as DataGridView).RowCount - 1) return;
-            //if (!IsLoaded) return;
             BS_Save();
         }
         private void toolStripButtonDelete_Click(object sender, EventArgs e)
@@ -58,10 +60,6 @@ namespace CA
         private void button_Refresh_Click(object sender, EventArgs e)
         {
             BS_Refresh(table_ProjectsDataGridView, table_MoneyFlowDataGridView);
-        }
-        private void Form_MoneyFlow_Shown(object sender, EventArgs e)
-        {
-            //IsLoaded = true;
         }
     }
 }

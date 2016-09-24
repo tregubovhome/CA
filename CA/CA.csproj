@@ -97,11 +97,23 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>CA_DB_DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Form_BaseStyle.cs">
+    <Compile Include="FormBaseStyle.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form_BaseStyle.Designer.cs">
-      <DependentUpon>Form_BaseStyle.cs</DependentUpon>
+    <Compile Include="FormBaseStyle.Designer.cs">
+      <DependentUpon>FormBaseStyle.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEdit_Calculator.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEdit_Calculator.Designer.cs">
+      <DependentUpon>FormEdit_Calculator.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormEdit_Calendar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEdit_Calendar.Designer.cs">
+      <DependentUpon>FormEdit_Calendar.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Companies.cs">
       <SubType>Form</SubType>
@@ -121,11 +133,29 @@
     <Compile Include="Form_Materials.Designer.cs">
       <DependentUpon>Form_Materials.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_MeasureUnits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_MeasureUnits.Designer.cs">
+      <DependentUpon>Form_MeasureUnits.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form_MoneyFlow.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_MoneyFlow.Designer.cs">
       <DependentUpon>Form_MoneyFlow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_ProjectCurrent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_ProjectCurrent.Designer.cs">
+      <DependentUpon>Form_ProjectCurrent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_Projects.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_Projects.Designer.cs">
+      <DependentUpon>Form_Projects.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_Start.cs">
       <SubType>Form</SubType>
@@ -135,8 +165,14 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form_BaseStyle.resx">
-      <DependentUpon>Form_BaseStyle.cs</DependentUpon>
+    <EmbeddedResource Include="FormBaseStyle.resx">
+      <DependentUpon>FormBaseStyle.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEdit_Calculator.resx">
+      <DependentUpon>FormEdit_Calculator.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEdit_Calendar.resx">
+      <DependentUpon>FormEdit_Calendar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Companies.resx">
       <DependentUpon>Form_Companies.cs</DependentUpon>
@@ -147,8 +183,17 @@
     <EmbeddedResource Include="Form_Materials.resx">
       <DependentUpon>Form_Materials.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_MeasureUnits.resx">
+      <DependentUpon>Form_MeasureUnits.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_MoneyFlow.resx">
       <DependentUpon>Form_MoneyFlow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_ProjectCurrent.resx">
+      <DependentUpon>Form_ProjectCurrent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Projects.resx">
+      <DependentUpon>Form_Projects.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
